@@ -1,6 +1,7 @@
 import { Plane, Linkedin, Twitter, Facebook, Instagram, Send } from "lucide-react";
 import { toast } from "sonner";
 import { useState } from "react";
+import logo from "../assets/VIOM AIR LOGO/VIOM AIR.png";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -20,13 +21,11 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-6">
-              <div className="bg-primary-foreground/10 rounded-lg p-2">
-                <Plane className="h-6 w-6" />
-              </div>
-              <div>
-                <span className="text-xl font-bold tracking-tight">VIOM AIR</span>
-                <span className="block text-[10px] font-medium tracking-widest uppercase -mt-1 opacity-60">Cargo</span>
-              </div>
+              <img
+                src={logo}
+                alt="VIOM AIR Cargo"
+                className="h-14 w-auto object-contain brightness-0 invert"
+              />
             </div>
             <p className="text-sm text-primary-foreground/60 leading-relaxed max-w-xs">
               Connecting businesses worldwide with reliable, innovative air cargo solutions across 120+ destinations.
@@ -37,9 +36,9 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-bold uppercase tracking-wider mb-5">Quick Links</h4>
             <ul className="space-y-3">
-              {["Help Centre", "FAQ", "Find Local Office", "Contact Us"].map((link) => (
+              {["About Us", "Help Centre", "FAQ", "Find Local Office", "Contact Us"].map((link) => (
                 <li key={link}>
-                  <a href="#help" className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+                  <a href={link === "About Us" ? "/about" : "#help"} className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors">
                     {link}
                   </a>
                 </li>
