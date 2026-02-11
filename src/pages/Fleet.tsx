@@ -108,7 +108,7 @@ export default function Fleet() {
 
             <main className="pt-20">
                 {/* Hero Section */}
-                <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+                <section className="relative h-[40vh] sm:h-[50vh] lg:h-[60vh] flex items-center justify-center overflow-hidden">
                     <div className="absolute inset-0">
                         <img
                             src={viomHero}
@@ -118,7 +118,7 @@ export default function Fleet() {
                         <div className="absolute inset-0 bg-black/40" />
                     </div>
                     <div className="relative z-10 text-center px-4 max-w-4xl">
-                        <h1 className="text-4xl md:text-6xl font-light text-white mb-6 tracking-tight animate-fade-up">
+                        <h1 className="text-2xl sm:text-4xl md:text-6xl font-light text-white mb-4 sm:mb-6 tracking-tight animate-fade-up">
                             The cargo airline you <br />
                             <span className="font-medium italic text-accent">can rely on</span>
                         </h1>
@@ -132,7 +132,7 @@ export default function Fleet() {
                             <h2 className="text-2xl font-light text-primary">Our Fleet</h2>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
                             {fleetData.map((aircraft) => (
                                 <div
                                     key={aircraft.id}
@@ -163,7 +163,7 @@ export default function Fleet() {
                 {selectedAircraft.specs.currentFleet && (
                     <section className="py-20 bg-white">
                         <div className="container mx-auto px-4 lg:px-8">
-                            <div className="grid lg:grid-cols-5 gap-12">
+                            <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
                                 {/* Visual Comparison / Image */}
                                 <div className="lg:col-span-2 space-y-8 animate-fade-up">
                                     <div className="text-center">
@@ -193,7 +193,7 @@ export default function Fleet() {
 
                                 {/* Specifications Table */}
                                 <div className="lg:col-span-3">
-                                    <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
+                                    <div className="overflow-x-auto overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
                                         <table className="w-full text-left border-collapse">
                                             <tbody className="divide-y divide-border">
                                                 <tr>

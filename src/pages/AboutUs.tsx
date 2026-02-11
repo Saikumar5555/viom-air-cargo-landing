@@ -80,7 +80,7 @@ export default function AboutUs() {
                 {/* Our Story Section */}
                 <section className="py-20 md:py-32 bg-white">
                     <div className="container mx-auto px-4 lg:px-8">
-                        <div className="grid lg:grid-cols-2 gap-16 items-center">
+                        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                             <div className="space-y-6 animate-fade-up">
                                 <span className="text-sm font-bold uppercase tracking-widest text-accent">Our Story</span>
                                 <h2 className="text-3xl md:text-4xl font-light text-primary leading-tight">
@@ -161,7 +161,7 @@ export default function AboutUs() {
                             Our strategic hubs and partnerships ensure that your cargo reaches even the most remote locations with efficiency and care.
                         </p>
 
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 pt-8 sm:pt-12">
                             {[
                                 { city: "Nairobi", code: "NBO", region: "Africa" },
                                 { city: "Dubai", code: "DXB", region: "Middle East" },

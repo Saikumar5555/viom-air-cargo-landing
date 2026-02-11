@@ -113,7 +113,7 @@ export default function Schedule() {
 
             <main className="pt-32 pb-20">
                 <div className="mx-auto w-full max-w-[94%] px-4 lg:px-8">
-                    <h1 className="text-4xl md:text-5xl font-light text-primary mb-12 tracking-tight">
+                    <h1 className="text-2xl sm:text-4xl md:text-5xl font-light text-primary mb-8 sm:mb-12 tracking-tight">
                         Schedule & Routing
                     </h1>
 
@@ -122,12 +122,12 @@ export default function Schedule() {
                         {/* Origin & Destination (Maroon Background) */}
                         <div className="lg:w-1/2 bg-primary p-0 flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-white/20 rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none">
                             {/* Origin */}
-                            <div ref={originRef} className="flex-1 p-8 relative flex flex-col justify-center cursor-pointer" onClick={() => setOriginSearchOpen(!originSearchOpen)}>
+                            <div ref={originRef} className="flex-1 p-4 sm:p-6 lg:p-8 relative flex flex-col justify-center cursor-pointer" onClick={() => setOriginSearchOpen(!originSearchOpen)}>
                                 <label className="text-[10px] uppercase tracking-wider text-white/60 mb-2 font-medium block text-center">Origin</label>
                                 <div className="flex items-center justify-between group">
                                     <PlaneTakeoff className="text-white/80 h-6 w-6" />
                                     <div className="text-center flex-1">
-                                        <div className="text-white text-3xl font-light">{origin?.city || "--"}</div>
+                                        <div className="text-white text-xl sm:text-2xl lg:text-3xl font-light">{origin?.city || "--"}</div>
                                         <div className="text-white/40 text-[10px]">{origin?.code || "---"}</div>
                                     </div>
                                     <ChevronDown className={cn("text-white/60 h-5 w-5 transition-transform", originSearchOpen && "rotate-180")} />
@@ -177,12 +177,12 @@ export default function Schedule() {
                             </div>
 
                             {/* Destination */}
-                            <div ref={destRef} className="flex-1 p-8 relative flex flex-col justify-center cursor-pointer" onClick={() => setDestSearchOpen(!destSearchOpen)}>
+                            <div ref={destRef} className="flex-1 p-4 sm:p-6 lg:p-8 relative flex flex-col justify-center cursor-pointer" onClick={() => setDestSearchOpen(!destSearchOpen)}>
                                 <label className="text-[10px] uppercase tracking-wider text-white/60 mb-2 font-medium block text-center">Destination</label>
                                 <div className="flex items-center justify-between group">
                                     <PlaneLanding className="text-white/80 h-6 w-6" />
                                     <div className="text-center flex-1">
-                                        <div className="text-white text-3xl font-light">{destination?.city || "--"}</div>
+                                        <div className="text-white text-xl sm:text-2xl lg:text-3xl font-light">{destination?.city || "--"}</div>
                                         <div className="text-white/40 text-[10px]">{destination?.code || "---"}</div>
                                     </div>
                                     <ChevronDown className={cn("text-white/60 h-5 w-5 transition-transform", destSearchOpen && "rotate-180")} />
@@ -233,8 +233,8 @@ export default function Schedule() {
                         </div>
 
                         {/* Date & Search (White/Light Grey Background) */}
-                        <div className="lg:w-1/2 bg-[#f8f9fa] p-8 flex flex-col justify-center rounded-b-2xl lg:rounded-r-2xl lg:rounded-bl-none z-10">
-                            <div className="flex flex-col md:flex-row items-center gap-8">
+                        <div className="lg:w-1/2 bg-[#f8f9fa] p-4 sm:p-6 lg:p-8 flex flex-col justify-center rounded-b-2xl lg:rounded-r-2xl lg:rounded-bl-none z-10">
+                            <div className="flex flex-col md:flex-row items-center gap-4 sm:gap-6 lg:gap-8">
                                 {/* Radios */}
                                 <div className="flex items-center gap-6">
                                     <label className="flex items-center gap-2 cursor-pointer group">
@@ -302,7 +302,7 @@ export default function Schedule() {
 
                     {/* Explore Our Solutions */}
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-light text-primary mb-4 tracking-tight">Explore Our Solutions</h2>
+                        <h2 className="text-2xl sm:text-4xl md:text-5xl font-light text-primary mb-4 tracking-tight">Explore Our Solutions</h2>
                         <p className="text-primary/70 text-xl font-light">Plan your next shipment with us!</p>
                     </div>
 

@@ -111,7 +111,7 @@ export default function Support() {
                             <ChevronRight className="h-4 w-4" />
                             <span className="text-foreground font-medium">Support Centre</span>
                         </nav>
-                        <h1 className="text-4xl md:text-5xl font-extrabold text-navy mb-6">
+                        <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-navy mb-4 sm:mb-6">
                             How can we <span className="text-gold">help you</span> today?
                         </h1>
                         <p className="text-lg text-muted-foreground leading-relaxed">
@@ -127,57 +127,57 @@ export default function Support() {
 
                     {/* Sidebar Navigation */}
                     <div className="lg:col-span-3">
-                        <div className="sticky top-32 space-y-2">
+                        <div className="flex lg:flex-col gap-2 overflow-x-auto pb-4 lg:pb-0 lg:sticky lg:top-32 lg:space-y-2 scrollbar-hide">
                             <button
                                 onClick={() => handleSectionChange("faq")}
-                                className={`w-full flex items-center justify-between px-6 py-4 rounded-xl transition-all duration-300 ${activeSection === "faq" ? "bg-navy text-white shadow-lg" : "hover:bg-muted text-foreground"
+                                className={`flex-shrink-0 lg:w-full flex items-center justify-between px-4 py-3 lg:px-6 lg:py-4 rounded-xl transition-all duration-300 ${activeSection === "faq" ? "bg-navy text-white shadow-lg" : "hover:bg-muted text-foreground"
                                     }`}
                             >
                                 <div className="flex items-center gap-3">
                                     <MessageCircle className="h-5 w-5" />
-                                    <span className="font-semibold">FAQs</span>
+                                    <span className="font-semibold text-sm lg:text-base whitespace-nowrap">FAQs</span>
                                 </div>
-                                <ChevronRight className={`h-4 w-4 ${activeSection === "faq" ? "opacity-100" : "opacity-0"}`} />
+                                <ChevronRight className={`h-4 w-4 hidden lg:block ${activeSection === "faq" ? "opacity-100" : "opacity-0"}`} />
                             </button>
 
                             <button
                                 onClick={() => handleSectionChange("claims")}
-                                className={`w-full flex items-center justify-between px-6 py-4 rounded-xl transition-all duration-300 ${activeSection === "claims" ? "bg-navy text-white shadow-lg" : "hover:bg-muted text-foreground"
+                                className={`flex-shrink-0 lg:w-full flex items-center justify-between px-4 py-3 lg:px-6 lg:py-4 rounded-xl transition-all duration-300 ${activeSection === "claims" ? "bg-navy text-white shadow-lg" : "hover:bg-muted text-foreground"
                                     }`}
                             >
                                 <div className="flex items-center gap-3">
                                     <FileWarning className="h-5 w-5" />
-                                    <span className="font-semibold">Cargo Claims</span>
+                                    <span className="font-semibold text-sm lg:text-base whitespace-nowrap">Cargo Claims</span>
                                 </div>
-                                <ChevronRight className={`h-4 w-4 ${activeSection === "claims" ? "opacity-100" : "opacity-0"}`} />
+                                <ChevronRight className={`h-4 w-4 hidden lg:block ${activeSection === "claims" ? "opacity-100" : "opacity-0"}`} />
                             </button>
 
                             <button
                                 onClick={() => handleSectionChange("contact")}
-                                className={`w-full flex items-center justify-between px-6 py-4 rounded-xl transition-all duration-300 ${activeSection === "contact" ? "bg-navy text-white shadow-lg" : "hover:bg-muted text-foreground"
+                                className={`flex-shrink-0 lg:w-full flex items-center justify-between px-4 py-3 lg:px-6 lg:py-4 rounded-xl transition-all duration-300 ${activeSection === "contact" ? "bg-navy text-white shadow-lg" : "hover:bg-muted text-foreground"
                                     }`}
                             >
                                 <div className="flex items-center gap-3">
                                     <Phone className="h-5 w-5" />
-                                    <span className="font-semibold">Contact Us</span>
+                                    <span className="font-semibold text-sm lg:text-base whitespace-nowrap">Contact Us</span>
                                 </div>
-                                <ChevronRight className={`h-4 w-4 ${activeSection === "contact" ? "opacity-100" : "opacity-0"}`} />
+                                <ChevronRight className={`h-4 w-4 hidden lg:block ${activeSection === "contact" ? "opacity-100" : "opacity-0"}`} />
                             </button>
 
                             <button
                                 onClick={() => handleSectionChange("locations")}
-                                className={`w-full flex items-center justify-between px-6 py-4 rounded-xl transition-all duration-300 ${activeSection === "locations" ? "bg-navy text-white shadow-lg" : "hover:bg-muted text-foreground"
+                                className={`flex-shrink-0 lg:w-full flex items-center justify-between px-4 py-3 lg:px-6 lg:py-4 rounded-xl transition-all duration-300 ${activeSection === "locations" ? "bg-navy text-white shadow-lg" : "hover:bg-muted text-foreground"
                                     }`}
                             >
                                 <div className="flex items-center gap-3">
                                     <MapPin className="h-5 w-5" />
-                                    <span className="font-semibold">Global Offices</span>
+                                    <span className="font-semibold text-sm lg:text-base whitespace-nowrap">Global Offices</span>
                                 </div>
-                                <ChevronRight className={`h-4 w-4 ${activeSection === "locations" ? "opacity-100" : "opacity-0"}`} />
+                                <ChevronRight className={`h-4 w-4 hidden lg:block ${activeSection === "locations" ? "opacity-100" : "opacity-0"}`} />
                             </button>
 
                             {/* Support Info Card */}
-                            <div className="mt-8 p-6 rounded-2xl bg-gold/10 border border-gold/20">
+                            <div className="hidden lg:block mt-8 p-6 rounded-2xl bg-gold/10 border border-gold/20">
                                 <ShieldCheck className="h-8 w-8 text-gold mb-4" />
                                 <h4 className="font-bold text-navy mb-2">Live Support</h4>
                                 <p className="text-sm text-navy/70 mb-4">Urgent shipments? Call our 24/7 hotline for immediate assistance.</p>
@@ -224,13 +224,13 @@ export default function Support() {
                                                         <div key={i} className="group rounded-2xl border border-border hover:border-gold/30 bg-card overflow-hidden transition-all duration-300">
                                                             <button
                                                                 onClick={() => setExpandedFaq(isExpanded ? null : id)}
-                                                                className="w-full text-left px-8 py-6 flex items-center justify-between"
+                                                                className="w-full text-left px-4 py-4 sm:px-8 sm:py-6 flex items-center justify-between"
                                                             >
                                                                 <span className="font-semibold text-navy group-hover:text-gold transition-colors">{faq.q}</span>
                                                                 <ChevronDown className={`h-5 w-5 text-muted-foreground transition-transform duration-300 ${isExpanded ? "rotate-180" : ""}`} />
                                                             </button>
                                                             {isExpanded && (
-                                                                <div className="px-8 pb-6 text-muted-foreground leading-relaxed animate-fade-up">
+                                                                <div className="px-4 pb-4 sm:px-8 sm:pb-6 text-muted-foreground leading-relaxed animate-fade-up">
                                                                     {faq.a}
                                                                 </div>
                                                             )}
@@ -257,7 +257,7 @@ export default function Support() {
 
                                 <div className="grid md:grid-cols-2 gap-12">
                                     <form onSubmit={handleSubmit} className="space-y-6">
-                                        <div className="grid grid-cols-2 gap-6">
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                                             <div className="space-y-2">
                                                 <label className="text-sm font-bold text-navy">AWB Number</label>
                                                 <input required placeholder="000-00000000" className="w-full px-4 py-3 rounded-xl border border-border bg-card focus:outline-none focus:ring-2 focus:ring-gold/20" />

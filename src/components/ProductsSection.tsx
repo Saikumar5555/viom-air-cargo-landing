@@ -17,8 +17,8 @@ export default function ProductsSection() {
   };
 
   return (
-    <section id="products" className="py-24 bg-background overflow-hidden relative">
-      <div className="mx-auto w-full max-w-[94%] px-4 lg:px-8 mb-12 flex justify-between items-end">
+    <section id="products" className="py-16 lg:py-24 bg-background overflow-hidden relative">
+      <div className="mx-auto w-full max-w-[94%] px-4 lg:px-8 mb-8 lg:mb-12 flex justify-between items-end">
         <div>
           <p className="text-xl md:text-2xl font-light text-muted-foreground">
             Explore Our Products
@@ -30,7 +30,7 @@ export default function ProductsSection() {
         {/* Navigation Buttons - Left */}
         <button
           onClick={() => scroll('left')}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-white/80 backdrop-blur-sm border border-border shadow-lg opacity-0 group-hover/nav:opacity-100 transition-opacity -ml-6 hover:bg-white"
+          className="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm border border-border shadow-lg opacity-0 group-hover/nav:opacity-100 transition-opacity -ml-6 hover:bg-white"
           aria-label="Scroll left"
         >
           <ChevronLeft className="h-6 w-6" />
@@ -40,12 +40,12 @@ export default function ProductsSection() {
           ref={scrollContainerRef}
           className="overflow-x-auto pb-8 scrollbar-hide snap-x snap-mandatory"
         >
-          <div className="flex gap-6 w-max">
+          <div className="flex gap-4 lg:gap-6 w-max">
             {products.map((product) => (
               <Link
                 key={product.id}
                 to={`/product/${product.id}`}
-                className="group relative h-[300px] w-[calc((94vw-4rem-72px)/4)] lg:w-[calc((94vw-4rem-72px)/4)] min-w-[280px] flex-shrink-0 overflow-hidden rounded-2xl cursor-pointer transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 snap-center"
+                className="group relative h-[300px] w-[85vw] sm:w-[45vw] md:w-[40vw] lg:w-[30vw] xl:w-[calc((94vw-4rem-72px)/4)] min-w-[260px] flex-shrink-0 overflow-hidden rounded-2xl cursor-pointer transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 snap-center"
               >
                 {/* Background Image */}
                 <div className="absolute inset-0">
@@ -63,9 +63,9 @@ export default function ProductsSection() {
                   <h3 className="text-2xl font-bold text-white mb-1 transition-colors">
                     {product.name}
                   </h3>
-                  <div className="overflow-hidden max-h-0 opacity-0 group-hover:max-h-12 group-hover:opacity-100 transition-all duration-500 ease-in-out">
+                  <div className="overflow-hidden max-h-12 opacity-100 lg:max-h-0 lg:opacity-0 lg:group-hover:max-h-12 lg:group-hover:opacity-100 transition-all duration-500 ease-in-out">
                     <span
-                      className="inline-block mt-2 px-6 py-2 text-white text-sm font-medium rounded-full shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100"
+                      className="inline-block mt-2 px-6 py-2 text-white text-sm font-medium rounded-full shadow-lg transform translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0 transition-transform duration-500 delay-100"
                       style={{ backgroundColor: '#b38b77' }}
                     >
                       Read More
@@ -80,7 +80,7 @@ export default function ProductsSection() {
         {/* Navigation Buttons - Right */}
         <button
           onClick={() => scroll('right')}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-white/80 backdrop-blur-sm border border-border shadow-lg opacity-0 group-hover/nav:opacity-100 transition-opacity -mr-6 hover:bg-white"
+          className="hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm border border-border shadow-lg opacity-0 group-hover/nav:opacity-100 transition-opacity -mr-6 hover:bg-white"
           aria-label="Scroll right"
         >
           <ChevronRight className="h-6 w-6" />

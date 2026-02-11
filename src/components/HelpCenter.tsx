@@ -43,12 +43,12 @@ export default function HelpCenter() {
         </div>
 
         {/* Card Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {helpCards.map((card) => (
             <button
               key={card.id}
               onClick={() => navigate(`/support/${card.id}`)}
-              className="group relative overflow-hidden rounded-2xl bg-card border border-border shadow-card hover:shadow-card-hover transition-all duration-300 card-lift h-[320px]"
+              className="group relative overflow-hidden rounded-2xl bg-card border border-border shadow-card hover:shadow-card-hover transition-all duration-300 card-lift h-[200px] sm:h-[260px] lg:h-[320px]"
             >
               {/* Background Image */}
               <div

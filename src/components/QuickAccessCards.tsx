@@ -141,33 +141,38 @@ export default function QuickAccessCards({
         },
     ];
 
+    const handleCardInteraction = (cardId: string) => {
+        setHoveredCard(prev => prev === cardId ? null : cardId);
+    };
+
     return (
-        <div className={cn("px-4 lg:px-8 relative z-20 mx-auto w-full max-w-[94%]", className || "-mt-[130px] mb-8")}>
-            <div className="grid grid-cols-1 lg:grid-cols-4 bg-white rounded-xl shadow-xl overflow-hidden divide-y lg:divide-y-0 lg:divide-x divide-gray-100 min-h-[260px]">
+        <div className={cn("px-4 lg:px-8 relative z-20 mx-auto w-full max-w-[94%]", className || "mt-8 xl:-mt-[130px] mb-12")}>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 bg-white rounded-xl shadow-xl overflow-hidden divide-y divide-gray-100 md:divide-y-0 md:gap-px lg:gap-0 lg:divide-x border border-gray-100">
                 {cards.map((card) => {
-                    const isHovered = hoveredCard === card.id;
+                    const isActive = hoveredCard === card.id;
 
                     return (
                         <div
                             key={card.id}
                             onMouseEnter={() => setHoveredCard(card.id)}
                             onMouseLeave={() => setHoveredCard(null)}
+                            onClick={() => handleCardInteraction(card.id)}
                             className={cn(
-                                "relative p-4 flex flex-col items-center text-center cursor-pointer h-full min-h-[260px]",
-                                isHovered ? "bg-white" : "hover:bg-gray-50"
+                                "relative p-3 sm:p-4 flex flex-col items-center text-center cursor-pointer min-h-[200px] sm:min-h-[220px] lg:min-h-[260px] transition-colors duration-200",
+                                isActive ? "bg-white" : "hover:bg-gray-50"
                             )}
                         >
                             {/* Static Content Container - NO resizing behavior */}
-                            <div className="w-full h-full flex flex-col items-center justify-center relative min-h-[180px]">
+                            <div className="w-full h-full flex flex-col items-center justify-center relative min-h-[160px] sm:min-h-[180px]">
                                 {/* Default Content - Fades out but doesn't move or scale */}
                                 <div className={cn(
-                                    "flex flex-col items-center transition-opacity duration-300 absolute inset-0 justify-center p-6",
-                                    isHovered ? "opacity-0 pointer-events-none" : "opacity-100"
+                                    "flex flex-col items-center transition-opacity duration-300 absolute inset-0 justify-center p-4 sm:p-6",
+                                    isActive ? "opacity-0 pointer-events-none" : "opacity-100"
                                 )}>
-                                    <div className="mb-4 text-primary">
-                                        <card.icon strokeWidth={1} className="h-12 w-12" />
+                                    <div className="mb-3 sm:mb-4 text-primary">
+                                        <card.icon strokeWidth={1} className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12" />
                                     </div>
-                                    <h3 className="text-lg font-light text-primary mb-2">
+                                    <h3 className="text-sm sm:text-base lg:text-lg font-medium lg:font-light text-primary mb-1 sm:mb-2">
                                         {card.title}
                                     </h3>
                                     <p className="text-xs text-gray-500 font-light max-w-[200px]">
@@ -178,9 +183,9 @@ export default function QuickAccessCards({
                                 {/* Expanded Content - Fades in strictly on top */}
                                 <div className={cn(
                                     "w-full h-full flex flex-col justify-center transition-opacity duration-300",
-                                    isHovered ? "opacity-100" : "opacity-0 pointer-events-none absolute inset-0"
+                                    isActive ? "opacity-100" : "opacity-0 pointer-events-none absolute inset-0"
                                 )}>
-                                    {isHovered && card.expandedContent}
+                                    {isActive && card.expandedContent}
                                 </div>
                             </div>
                         </div>

@@ -46,7 +46,7 @@ export default function RegisterModal({ isOpen, onClose, onBackToSignIn, onRegis
             <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
             <div className="relative w-full max-w-4xl bg-card rounded-3xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
                 {/* Header */}
-                <div className="gradient-primary p-6 text-primary-foreground flex-shrink-0">
+                <div className="gradient-primary p-4 sm:p-6 text-primary-foreground flex-shrink-0">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
                             <button onClick={onBackToSignIn} className="hover:opacity-70 transition-opacity">
@@ -61,7 +61,7 @@ export default function RegisterModal({ isOpen, onClose, onBackToSignIn, onRegis
                 </div>
 
                 {/* Form - Scrollable */}
-                <form onSubmit={handleSubmit} className="p-6 space-y-6 overflow-y-auto flex-grow">
+                <form onSubmit={handleSubmit} className="p-4 sm:p-6 space-y-4 sm:space-y-6 overflow-y-auto flex-grow">
                     {/* Personal Information */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div>

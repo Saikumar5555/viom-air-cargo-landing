@@ -56,7 +56,7 @@ export default function BookingModal({ open, onClose }: BookingModalProps) {
       <div className="absolute inset-0 bg-foreground/50 backdrop-blur-sm" onClick={onClose} />
       <div className="relative w-full max-w-2xl bg-card rounded-2xl shadow-card-hover overflow-hidden max-h-[90vh] overflow-y-auto">
         {/* Header */}
-        <div className="gradient-primary p-6 text-primary-foreground">
+        <div className="gradient-primary p-4 sm:p-6 text-primary-foreground">
           <button onClick={onClose} className="absolute top-4 right-4 text-primary-foreground/70 hover:text-primary-foreground">
             <X className="h-5 w-5" />
           </button>
@@ -70,7 +70,7 @@ export default function BookingModal({ open, onClose }: BookingModalProps) {
           </button>
         </div>
 
-        <div className="p-6 space-y-6">
+        <div className="p-4 sm:p-6 space-y-6">
           {/* Tabs */}
           <div className="flex gap-1 bg-muted rounded-lg p-1">
             {(["flights", "schedules"] as Tab[]).map((t) => (

@@ -61,22 +61,22 @@ export default function ProductDetail() {
                             <product.icon className="h-4 w-4" />
                             {product.category} Solutions
                         </div>
-                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 uppercase tracking-tight">
+                        <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold text-white mb-4 sm:mb-6 uppercase tracking-tight">
                             {product.name}
                         </h1>
-                        <p className="text-xl text-white/90 max-w-2xl font-light">
+                        <p className="text-base md:text-xl text-white/90 max-w-2xl font-light">
                             {product.tagline}
                         </p>
                     </div>
                 </section>
 
                 {/* Content Section */}
-                <section className="py-24">
+                <section className="py-12 lg:py-24">
                     <div className="mx-auto w-full max-w-[94%] px-4 lg:px-8">
-                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16">
 
                             {/* Left Column: Description & Benefits */}
-                            <div className="lg:col-span-2 space-y-16">
+                            <div className="lg:col-span-2 space-y-10 lg:space-y-16">
                                 <div>
                                     <h2 className="text-3xl font-bold text-foreground mb-8">Service Overview</h2>
                                     <p className="text-xl text-muted-foreground leading-relaxed">
@@ -84,7 +84,7 @@ export default function ProductDetail() {
                                     </p>
                                 </div>
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-12">
                                     <div>
                                         <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
                                             Key Features
@@ -113,7 +113,7 @@ export default function ProductDetail() {
                                     </div>
                                 </div>
 
-                                <div className="bg-muted/30 rounded-3xl p-12 relative overflow-hidden">
+                                <div className="bg-muted/30 rounded-3xl p-6 sm:p-8 md:p-12 relative overflow-hidden">
                                     <Quote className="absolute top-8 right-8 h-24 w-24 text-primary/5 -z-0" />
                                     <h3 className="text-2xl font-bold text-foreground mb-8 relative z-10">Common Use Cases</h3>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
