@@ -8,9 +8,11 @@ import RegisterModal from "@/components/RegisterModal";
 import ProductsSection from "@/components/ProductsSection";
 import HelpCenter from "@/components/HelpCenter";
 import Footer from "@/components/Footer";
+
 import { toast } from "sonner";
 
-import QuickAccessCards from "@/components/QuickAccessCards";
+
+import ServicesSection from "@/components/ServicesSection";
 import DestinationsSection from "@/components/DestinationsSection";
 
 const Index = () => {
@@ -18,6 +20,7 @@ const Index = () => {
   const [trackOpen, setTrackOpen] = useState(false);
   const [signInOpen, setSignInOpen] = useState(false);
   const [registerOpen, setRegisterOpen] = useState(false);
+  const [trackingNumber, setTrackingNumber] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
     return localStorage.getItem("isAuthenticated") === "true";
   });
@@ -70,17 +73,21 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar onSignInClick={() => setSignInOpen(true)} />
       <HeroSection onBookNow={handleBookNowClick} onTrack={() => setTrackOpen(true)} />
-      <QuickAccessCards
-        onBookClick={handleBookNowClick}
-        onTrackClick={() => setTrackOpen(true)}
-      />
+
+
+
       <ProductsSection />
+      <ServicesSection />
       <DestinationsSection />
       <HelpCenter />
       <Footer />
 
       <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />
-      <TrackShipmentModal open={trackOpen} onClose={() => setTrackOpen(false)} />
+      <TrackShipmentModal
+        open={trackOpen}
+        onClose={() => setTrackOpen(false)}
+        initialAwb={trackingNumber}
+      />
       <SignInModal
         isOpen={signInOpen}
         onClose={() => setSignInOpen(false)}

@@ -1,4 +1,5 @@
 import { Plane, Linkedin, Twitter, Facebook, Instagram, Send } from "lucide-react";
+import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import { useState } from "react";
 import logo from "../assets/VIOM AIR LOGO/VIOM AIR.png";
@@ -15,7 +16,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="bg-primary text-primary-foreground overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 py-10 lg:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Brand */}
@@ -24,11 +25,11 @@ export default function Footer() {
               <img
                 src={logo}
                 alt="VIOM AIR Cargo"
-                className="h-14 w-auto object-contain brightness-0 invert"
+                className="h-14 w-auto object-contain"
               />
             </div>
             <p className="text-sm text-primary-foreground/60 leading-relaxed max-w-xs">
-              Connecting businesses worldwide with reliable, innovative air cargo solutions across 120+ destinations.
+              Delivering ultra-secure, white-glove air cargo solutions across global destinations.
             </p>
           </div>
 
@@ -36,11 +37,20 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-bold uppercase tracking-wider mb-5">Quick Links</h4>
             <ul className="space-y-3">
-              {["About Us", "Help Centre", "FAQ", "Find Local Office", "Contact Us"].map((link) => (
-                <li key={link}>
-                  <a href={link === "About Us" ? "/about" : "#help"} className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors">
-                    {link}
-                  </a>
+              {[
+                { name: "About Us", path: "/about" },
+                { name: "Help Centre", path: "/support" },
+                { name: "FAQ", path: "/support/faq" },
+                { name: "Find Local Office", path: "/support/locations" },
+                { name: "Contact Us", path: "/support/contact" },
+              ].map((link) => (
+                <li key={link.name}>
+                  <Link
+                    to={link.path}
+                    className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors"
+                  >
+                    {link.name}
+                  </Link>
                 </li>
               ))}
             </ul>

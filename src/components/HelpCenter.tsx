@@ -33,9 +33,9 @@ export default function HelpCenter() {
   ];
 
   return (
-    <section id="help" className="py-24 bg-gradient-to-b from-background to-sky-light/30">
+    <section id="help" className="py-10 lg:py-12 bg-gradient-to-b from-background to-sky-light/30">
       <div className="mx-auto w-full max-w-[94%] px-4 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#b38b77] mb-3">
             Support
           </p>
@@ -48,7 +48,7 @@ export default function HelpCenter() {
             <button
               key={card.id}
               onClick={() => navigate(`/support/${card.id}`)}
-              className="group relative overflow-hidden rounded-2xl bg-card border border-border shadow-card hover:shadow-card-hover transition-all duration-300 card-lift h-[200px] sm:h-[260px] lg:h-[320px]"
+              className="group relative overflow-hidden rounded-none bg-card border border-border shadow-card hover:shadow-card-hover transition-all duration-300 card-lift h-[200px] sm:h-[260px] lg:h-[320px]"
             >
               {/* Background Image */}
               <div

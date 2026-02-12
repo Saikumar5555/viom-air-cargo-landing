@@ -4,10 +4,11 @@ import { X, Search, Package } from "lucide-react";
 interface TrackShipmentModalProps {
   open: boolean;
   onClose: () => void;
+  initialAwb?: string;
 }
 
-export default function TrackShipmentModal({ open, onClose }: TrackShipmentModalProps) {
-  const [awb, setAwb] = useState("");
+export default function TrackShipmentModal({ open, onClose, initialAwb }: TrackShipmentModalProps) {
+  const [awb, setAwb] = useState(initialAwb || "");
   const [searched, setSearched] = useState(false);
 
   if (!open) return null;

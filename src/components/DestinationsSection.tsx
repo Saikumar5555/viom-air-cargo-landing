@@ -92,10 +92,10 @@ export default function DestinationsSection() {
     const currentDest = destinations[currentIndex];
 
     return (
-        <section className="py-16 lg:py-24 bg-background overflow-hidden relative border-t border-border">
+        <section className="pt-6 pb-10 lg:pt-8 lg:pb-14 bg-background overflow-hidden relative border-t border-border">
             <div className="mx-auto w-full max-w-[94%] px-4 lg:px-8">
-                {/* Rounded Slider Card */}
-                <div className="relative h-[400px] md:h-[500px] lg:h-[550px] rounded-[2rem] lg:rounded-[2.5rem] overflow-hidden shadow-2xl bg-black group-nav">
+                {/* Rounded Slider Card - Rounded removed for sharp edges */}
+                <div className="relative h-[400px] md:h-[500px] lg:h-[550px] rounded-none overflow-hidden shadow-2xl bg-black group-nav">
 
                     {/* Background Images */}
                     {destinations.map((dest, index) => (

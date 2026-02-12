@@ -5,7 +5,7 @@ import BookingModal from "@/components/BookingModal";
 import TrackShipmentModal from "@/components/TrackShipmentModal";
 import SignInModal from "@/components/SignInModal";
 import RegisterModal from "@/components/RegisterModal";
-import QuickAccessCards from "@/components/QuickAccessCards";
+
 import { toast } from "sonner";
 import { Plane, PlaneTakeoff, PlaneLanding, Calendar, Info, FileText, MapPin, Globe, ChevronDown, Search, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -300,17 +300,7 @@ export default function Schedule() {
                         International schedules showing our latest flight timings and aircraft details. <span className="text-primary font-semibold">Note: All schedule are subject to changes.</span>
                     </p>
 
-                    {/* Explore Our Solutions */}
-                    <div className="text-center mb-16">
-                        <h2 className="text-2xl sm:text-4xl md:text-5xl font-light text-primary mb-4 tracking-tight">Explore Our Solutions</h2>
-                        <p className="text-primary/70 text-xl font-light">Plan your next shipment with us!</p>
-                    </div>
 
-                    <QuickAccessCards
-                        className="mb-0"
-                        onBookClick={handleBookNowClick}
-                        onTrackClick={() => setTrackOpen(true)}
-                    />
                 </div>
             </main>
 

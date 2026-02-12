@@ -2,17 +2,10 @@ import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
-const products = [
-  { name: "Pharma", href: "#products" },
-  { name: "Exquisite", href: "#products" },
-  { name: "Drive", href: "#products" },
-  { name: "Fresh", href: "#products" },
-  { name: "Secure Lift", href: "#products" },
-  { name: "Courier", href: "#products" },
-];
+import ProductsDrawer from "./ProductsDrawer";
 
 const centerLinks = [
-  { name: "Services", href: "#products" },
+  { name: "Services", href: "#services" },
   { name: "Fleet", href: "/fleet" },
   { name: "About Us", href: "/about" },
 ];
@@ -27,14 +20,23 @@ interface NavbarProps {
   onSignInClick: () => void;
 }
 
+const products = [
+  { name: "CHARTER", href: "#products" },
+  { name: "Health Care", href: "#products" },
+  { name: "Air Freight", href: "#products" },
+  { name: "Fresh", href: "#products" },
+];
+
 export default function Navbar({ onSignInClick }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [productsOpen, setProductsOpen] = useState(false);
+  const [productsDrawerOpen, setProductsDrawerOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
   const isHomePage = location.pathname === "/";
+  // Navbar is transparent only on homepage, when not scrolled, and mobile menu is closed
+
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith("#")) {
@@ -53,7 +55,7 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
 
   // Prevent scrolling when mobile menu is open
   useEffect(() => {
-    if (mobileOpen) {
+    if (mobileOpen || productsDrawerOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
@@ -61,14 +63,14 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
     return () => {
       document.body.style.overflow = "unset";
     };
-  }, [mobileOpen]);
+  }, [mobileOpen, productsDrawerOpen]);
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white ${scrolled || mobileOpen ? "shadow-nav" : ""
         }`}
     >
-      <div className="max-w-[94%] mx-auto flex items-center justify-between h-16 lg:h-20 px-4 lg:px-8 py-3">
+      <div className="max-w-[94%] mx-auto flex items-center justify-between h-16 lg:h-20 px-4 lg:px-8 py-3 relative">
         {/* Logo - Left aligned */}
         <div className="flex-shrink-0 z-50">
           <Link to="/" className="flex items-center gap-2 group" onClick={() => setMobileOpen(false)}>
@@ -80,87 +82,64 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
           </Link>
         </div>
 
-        {/* Desktop Nav - Center & Right Groups */}
-        <div className="hidden lg:flex flex-1 items-center justify-end">
-          {/* Center Links */}
-          <div className="flex justify-center items-center gap-1 mr-8">
-            {/* Products dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setProductsOpen(true)}
-              onMouseLeave={() => setProductsOpen(false)}
+        {/* Desktop Nav - Center Links */}
+        <div className="hidden lg:flex items-center gap-1 mx-auto">
+          {/* Products trigger */}
+          <button
+            onClick={() => setProductsDrawerOpen(true)}
+            className="flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-colors text-foreground hover:bg-muted"
+          >
+            Products <ChevronDown className="h-4 w-4" />
+          </button>
+
+
+          {centerLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={(e) => {
+                handleLinkClick(e, link.href);
+              }}
+              className="px-4 py-2 text-sm font-medium rounded-lg transition-colors text-foreground hover:bg-muted"
             >
-              <button
-                className="flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-colors text-foreground hover:bg-muted"
-              >
-                Products <ChevronDown className="h-4 w-4" />
-              </button>
-              {productsOpen && (
-                <div
-                  className="absolute top-full left-0 mt-1 w-52 bg-white rounded-xl shadow-card-hover border border-border p-2 z-50 animate-in fade-in zoom-in-95 duration-200"
-                >
-                  {products.map((p) => (
-                    <a
-                      key={p.name}
-                      href={p.href}
-                      onClick={(e) => handleLinkClick(e, p.href)}
-                      className="block px-4 py-2.5 text-sm font-medium text-foreground rounded-lg hover:bg-muted transition-colors"
-                    >
-                      {p.name}
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
+              {link.name}
+            </a>
+          ))}
+        </div>
 
-            {centerLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => {
-                  handleLinkClick(e, link.href);
-                }}
-                className="px-4 py-2 text-sm font-medium rounded-lg transition-colors text-foreground hover:bg-muted"
-              >
-                {link.name}
-              </a>
-            ))}
-          </div>
+        {/* Desktop Nav - Right Links */}
+        <div className="hidden lg:flex items-center gap-1">
+          {rightLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={(e) => {
+                handleLinkClick(e, link.href);
+              }}
+              className="px-4 py-2 text-sm font-medium rounded-lg transition-colors text-foreground hover:bg-muted"
+            >
+              {link.name}
+            </a>
+          ))}
 
-          {/* Right Links */}
-          <div className="flex items-center gap-1">
-            {rightLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => {
-                  handleLinkClick(e, link.href);
-                }}
-                className="px-4 py-2 text-sm font-medium rounded-lg transition-colors text-foreground hover:bg-muted"
-              >
-                {link.name}
-              </a>
-            ))}
-
-            {localStorage.getItem("isAuthenticated") === "true" ? (
-              <button
-                onClick={() => {
-                  localStorage.removeItem("isAuthenticated");
-                  window.location.href = "/";
-                }}
-                className="ml-4 px-5 py-2.5 text-sm font-semibold rounded-lg border border-border text-foreground shadow-sm hover:bg-muted transition-colors"
-              >
-                Sign Out
-              </button>
-            ) : (
-              <button
-                onClick={onSignInClick}
-                className="ml-4 px-5 py-2.5 text-sm font-semibold rounded-lg gradient-primary text-primary-foreground shadow-sm hover:opacity-90 transition-opacity"
-              >
-                Sign In
-              </button>
-            )}
-          </div>
+          {localStorage.getItem("isAuthenticated") === "true" ? (
+            <button
+              onClick={() => {
+                localStorage.removeItem("isAuthenticated");
+                window.location.href = "/";
+              }}
+              className="ml-4 px-5 py-2.5 text-sm font-semibold rounded-lg border border-border text-foreground shadow-sm hover:bg-muted transition-colors"
+            >
+              Sign Out
+            </button>
+          ) : (
+            <button
+              onClick={onSignInClick}
+              className="ml-4 px-5 py-2.5 text-sm font-semibold rounded-lg gradient-primary text-primary-foreground shadow-sm hover:opacity-90 transition-opacity"
+            >
+              Sign In
+            </button>
+          )}
         </div>
 
         {/* Mobile toggle */}
@@ -171,6 +150,10 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
         >
           {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
+        <ProductsDrawer
+          isOpen={productsDrawerOpen}
+          onClose={() => setProductsDrawerOpen(false)}
+        />
       </div>
 
       {/* Mobile Menu Overlay */}
