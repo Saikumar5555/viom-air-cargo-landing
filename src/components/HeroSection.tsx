@@ -22,8 +22,8 @@ export default function HeroSection({ onBookNow, onGetQuote }: HeroSectionProps)
         <div className="max-w-2xl xl:max-w-4xl animate-fade-up">
 
           <h1 className="text-lg sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary-foreground leading-tight mb-2 lg:mb-6">
-            Delivering the World, <br />
-            <span className="logo-gradient-text">Mile by Mile</span>
+            Delivering the World,
+            <span className="logo-gradient-text block w-fit mt-1 sm:mt-2">Mile by Mile</span>
           </h1>
           <p className="text-[11px] sm:text-base lg:text-lg text-primary-foreground/80 mb-5 lg:mb-10 max-w-lg lg:max-w-2xl leading-relaxed line-clamp-3 sm:line-clamp-none">
             VIOM AIR provides ultra-secure, white-glove cargo logistics for high-value shipments — from cutting-edge pharmaceuticals to priceless luxury goods.
