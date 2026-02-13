@@ -31,6 +31,7 @@ export default function ServicesSection() {
                                                 src={service.image}
                                                 alt={service.name}
                                                 className="w-full h-full object-cover"
+                                                loading="lazy"
                                             />
                                         </div>
                                     </div>

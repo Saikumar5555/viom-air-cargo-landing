@@ -13,6 +13,7 @@ export default function HeroSection({ onBookNow, onTrack }: HeroSectionProps) {
         src={heroImage}
         alt="VIOM AIR cargo aircraft flying above clouds"
         className="absolute inset-0 w-full h-full object-cover object-right md:object-[60%_20%] lg:object-[75%_center] 2xl:object-center"
+        fetchPriority="high"
       />
       {/* Overlay */}
       <div className="absolute inset-0 gradient-hero-overlay" />

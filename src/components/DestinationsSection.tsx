@@ -108,6 +108,7 @@ export default function DestinationsSection() {
                                 src={dest.image}
                                 alt={dest.name}
                                 className="w-full h-full object-cover"
+                                loading={index === 0 ? "eager" : "lazy"}
                             />
                             {/* Cinematic Overlay - Darker at bottom for text legibility */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10" />

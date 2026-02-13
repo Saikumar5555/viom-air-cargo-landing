@@ -95,6 +95,7 @@ export default function AboutUs() {
                                         src={viomHero}
                                         alt="VIOM Air Cargo Operation"
                                         className="w-full h-auto block transition-transform duration-700 group-hover:scale-105"
+                                        loading="lazy"
                                     />
                                 </div>
                                 <div className="absolute -bottom-8 -right-8 bg-primary p-10 rounded-2xl shadow-2xl hidden md:block max-w-[280px]">

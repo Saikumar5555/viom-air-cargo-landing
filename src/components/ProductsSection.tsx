@@ -47,6 +47,7 @@ export default function ProductsSection() {
                     src={product.image}
                     alt={product.name}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
                   />
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-black/40" />
