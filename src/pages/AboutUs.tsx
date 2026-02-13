@@ -71,7 +71,7 @@ export default function AboutUs() {
                                 <div className="space-y-4">
                                     <span className="text-sm font-bold uppercase tracking-[0.2em] logo-gradient-text">About VIOM Air Cargo</span>
                                     <h2 className="text-3xl md:text-5xl font-light text-white leading-tight">
-                                        Precision. Resilience. <br /><span className="italic">Global Reach.</span>
+                                        Precision. Resilience. <br /><span className="logo-gradient-text font-bold">Global Reach.</span>
                                     </h2>
                                 </div>
 
