@@ -41,7 +41,7 @@ export default function ServiceDetail() {
     }
 
     return (
-        <div className="min-h-screen bg-background pt-20">
+        <div className="min-h-screen bg-navy pt-20">
             <Navbar onSignInClick={() => navigate("/?signin=true")} />
 
             <main>
@@ -75,34 +75,34 @@ export default function ServiceDetail() {
                             {/* Left Column: Description & Benefits */}
                             <div className="lg:col-span-2 space-y-6 lg:space-y-10">
                                 <div>
-                                    <h2 className="text-2xl font-bold text-foreground mb-4">Service Overview</h2>
-                                    <p className="text-lg text-muted-foreground leading-relaxed">
+                                    <h2 className="text-2xl font-bold text-white mb-4">Service Overview</h2>
+                                    <p className="text-lg text-white/70 leading-relaxed">
                                         {service.longDescription}
                                     </p>
                                 </div>
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-12">
                                     <div>
-                                        <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
+                                        <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
                                             Key Features
                                         </h3>
                                         <ul className="space-y-4">
                                             {service.features.map((feature, idx) => (
-                                                <li key={idx} className="flex items-start gap-3 text-muted-foreground">
-                                                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                                                <li key={idx} className="flex items-start gap-3 text-white/70">
+                                                    <CheckCircle2 className="h-5 w-5 text-gold shrink-0 mt-0.5" />
                                                     <span>{feature}</span>
                                                 </li>
                                             ))}
                                         </ul>
                                     </div>
                                     <div>
-                                        <h3 className="text-xl font-bold text-foreground mb-6">
+                                        <h3 className="text-xl font-bold text-white mb-6">
                                             Why Choose {service.name}?
                                         </h3>
                                         <ul className="space-y-4">
                                             {service.benefits.map((benefit, idx) => (
-                                                <li key={idx} className="flex items-start gap-3 text-muted-foreground">
-                                                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0" />
+                                                <li key={idx} className="flex items-start gap-3 text-white/70">
+                                                    <span className="w-1.5 h-1.5 rounded-full bg-gold mt-2.5 shrink-0" />
                                                     <span>{benefit}</span>
                                                 </li>
                                             ))}
@@ -110,16 +110,16 @@ export default function ServiceDetail() {
                                     </div>
                                 </div>
 
-                                <div className="bg-muted/30 rounded-3xl p-6 sm:p-8 md:p-12 relative overflow-hidden">
-                                    <Quote className="absolute top-8 right-8 h-24 w-24 text-primary/5 -z-0" />
-                                    <h3 className="text-2xl font-bold text-foreground mb-8 relative z-10">Common Use Cases</h3>
+                                <div className="bg-white/5 rounded-3xl p-6 sm:p-8 md:p-12 relative overflow-hidden border border-white/10">
+                                    <Quote className="absolute top-8 right-8 h-24 w-24 text-white/5 -z-0" />
+                                    <h3 className="text-2xl font-bold text-white mb-8 relative z-10">Common Use Cases</h3>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
                                         {service.useCases.map((useCase, idx) => (
-                                            <div key={idx} className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-border shadow-sm">
-                                                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
+                                            <div key={idx} className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm">
+                                                <div className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold font-bold">
                                                     {idx + 1}
                                                 </div>
-                                                <span className="font-medium text-foreground">{useCase}</span>
+                                                <span className="font-medium text-white">{useCase}</span>
                                             </div>
                                         ))}
                                     </div>
@@ -128,28 +128,28 @@ export default function ServiceDetail() {
 
                             {/* Right Column: Specs & CTA */}
                             <div className="space-y-8">
-                                <div className="bg-card border border-border rounded-3xl p-8 shadow-xl">
-                                    <h3 className="text-xl font-bold text-foreground mb-6 pb-6 border-b border-border">
+                                <div className="bg-navy-light border border-white/10 rounded-3xl p-8 shadow-xl">
+                                    <h3 className="text-xl font-bold text-white mb-6 pb-6 border-b border-white/10">
                                         Service Details
                                     </h3>
                                     <div className="space-y-6">
                                         {service.specifications.map((spec, idx) => (
                                             <div key={idx}>
-                                                <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1">{spec.label}</p>
-                                                <p className="text-foreground font-medium">{spec.value}</p>
+                                                <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-1">{spec.label}</p>
+                                                <p className="text-white font-medium">{spec.value}</p>
                                             </div>
                                         ))}
                                     </div>
 
-                                    <div className="mt-12 pt-8 border-t border-border">
+                                    <div className="mt-12 pt-8 border-t border-white/10">
                                         <button
                                             onClick={handleGetQuote}
-                                            className="w-full py-4 rounded-xl text-white font-bold text-sm uppercase tracking-wider hover:opacity-90 transition-all shadow-lg shadow-primary/25"
+                                            className="w-full py-4 rounded-xl text-white font-bold text-sm uppercase tracking-wider hover:opacity-90 transition-all shadow-lg shadow-gold/25"
                                             style={{ backgroundColor: '#b38b77' }}
                                         >
                                             Book
                                         </button>
-                                        <p className="text-center text-xs text-muted-foreground mt-4">
+                                        <p className="text-center text-xs text-white/50 mt-4">
                                             Custom solutions for your needs
                                         </p>
                                     </div>
@@ -157,7 +157,7 @@ export default function ServiceDetail() {
 
                                 <button
                                     onClick={() => navigate("/")}
-                                    className="w-full flex items-center justify-center gap-2 py-4 rounded-xl border border-border hover:bg-muted/50 transition-colors font-medium text-muted-foreground"
+                                    className="w-full flex items-center justify-center gap-2 py-4 rounded-xl border border-white/10 hover:bg-white/5 transition-colors font-medium text-white/70"
                                 >
                                     <ArrowLeft className="h-4 w-4" /> Back to Home
                                 </button>

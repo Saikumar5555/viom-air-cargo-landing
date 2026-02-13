@@ -33,7 +33,7 @@ export default function AboutUs() {
     };
 
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-navy">
             <Navbar onSignInClick={() => setSignInOpen(true)} />
 
             <main className="pt-20">
@@ -52,7 +52,7 @@ export default function AboutUs() {
                     <div className="container mx-auto px-4 lg:px-8 relative z-10">
                         <div className="max-w-5xl">
                             <h1 className="text-4xl md:text-7xl font-light mb-8 tracking-tight animate-fade-up">
-                                When Cargo <span className="italic text-accent font-medium">Matters</span>,<br />
+                                When Cargo <span className="italic logo-gradient-text font-medium">Matters</span>,<br />
                                 Nothing Can Be Left to <span className="font-medium">Chance</span>.
                             </h1>
                             <p className="text-xl md:text-2xl text-white/70 max-w-3xl leading-relaxed animate-fade-up-delay-1">
@@ -63,26 +63,26 @@ export default function AboutUs() {
                 </section>
 
                 {/* Our Foundation */}
-                <section className="py-20 md:py-32 bg-white">
+                <section className="py-20 md:py-32 bg-navy">
                     <div className="container mx-auto px-4 lg:px-8">
                         <div className="grid lg:grid-cols-2 gap-16 items-center">
                             <div className="space-y-8 animate-fade-up">
                                 <div className="space-y-4">
-                                    <span className="text-sm font-bold uppercase tracking-[0.2em] text-accent">About VIOM Air Cargo</span>
-                                    <h2 className="text-3xl md:text-5xl font-light text-primary leading-tight">
+                                    <span className="text-sm font-bold uppercase tracking-[0.2em] logo-gradient-text">About VIOM Air Cargo</span>
+                                    <h2 className="text-3xl md:text-5xl font-light text-white leading-tight">
                                         Precision. Resilience. <br /><span className="italic">Global Reach.</span>
                                     </h2>
                                 </div>
 
-                                <div className="space-y-6 text-lg text-primary/70 leading-relaxed">
+                                <div className="space-y-6 text-lg text-white/70 leading-relaxed">
                                     <p>
                                         Operating across key international and domestic air corridors, we deliver time-critical logistics solutions with disciplined execution and strategic intelligence.
                                     </p>
                                     <p>
-                                        Every shipment we handle — whether commercial, industrial, or life-saving — is treated as a mission with measurable responsibility. At VIOM, logistics is not transactional. It is <span className="text-primary font-semibold italic">structural</span>.
+                                        Every shipment we handle — whether commercial, industrial, or life-saving — is treated as a mission with measurable responsibility. At VIOM, logistics is not transactional. It is <span className="text-white font-semibold italic">structural</span>.
                                     </p>
                                     <div className="pt-4 border-l-2 border-accent pl-6">
-                                        <p className="text-primary font-medium italic">
+                                        <p className="text-white font-medium italic">
                                             "We do not merely transport cargo. We safeguard value, time, and trust."
                                         </p>
                                     </div>
@@ -90,7 +90,7 @@ export default function AboutUs() {
                             </div>
 
                             <div className="relative animate-fade-up-delay-1">
-                                <div className="rounded-2xl overflow-hidden shadow-2xl border border-border bg-white group">
+                                <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-navy group">
                                     <img
                                         src={viomHero}
                                         alt="VIOM Air Cargo Operation"
@@ -98,10 +98,10 @@ export default function AboutUs() {
                                         loading="lazy"
                                     />
                                 </div>
-                                <div className="absolute -bottom-8 -right-8 bg-primary p-10 rounded-2xl shadow-2xl hidden md:block max-w-[280px]">
+                                <div className="absolute -bottom-8 -right-8 bg-navy-light border border-white/10 p-10 rounded-2xl shadow-2xl hidden md:block max-w-[280px]">
                                     <p className="text-white/60 text-sm font-medium uppercase tracking-widest mb-2">Operational Philosophy</p>
                                     <p className="text-xl font-light text-white leading-snug">
-                                        Engineered for reliability <span className="text-accent font-bold italic">at scale</span>.
+                                        Engineered for reliability <span className="logo-gradient-text font-bold italic">at scale</span>.
                                     </p>
                                 </div>
                             </div>
@@ -110,7 +110,7 @@ export default function AboutUs() {
                 </section>
 
                 {/* Pharmaceutical Logistics - Specialized Section */}
-                <section className="py-24 md:py-32 bg-[#F8F9FA] border-y border-border">
+                <section className="py-24 md:py-32 bg-navy-light border-y border-white/10">
                     <div className="container mx-auto px-4 lg:px-8">
                         <div className="grid lg:grid-cols-12 gap-16">
                             <div className="lg:col-span-5 space-y-6">
@@ -118,11 +118,11 @@ export default function AboutUs() {
                                     <Activity className="h-4 w-4" />
                                     Specialized Sector
                                 </div>
-                                <h2 className="text-3xl md:text-4xl font-light text-primary leading-tight">
+                                <h2 className="text-3xl md:text-4xl font-light text-white leading-tight">
                                     Pharmaceutical Logistics — <br />
                                     <span className="font-medium">Our Core Expertise</span>
                                 </h2>
-                                <p className="text-primary/70 text-lg leading-relaxed">
+                                <p className="text-white/70 text-lg leading-relaxed">
                                     Pharmaceutical logistics demands far more than speed. It demands precision without compromise. VIOM Air Cargo has built a specialized ecosystem designed to protect product integrity at every stage.
                                 </p>
 
@@ -138,49 +138,49 @@ export default function AboutUs() {
                                             <div className="flex-shrink-0 w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center">
                                                 <CheckCircle2 className="h-4 w-4 text-accent" />
                                             </div>
-                                            <span className="text-primary/80 font-medium">{item}</span>
+                                            <span className="text-white/80 font-medium">{item}</span>
                                         </div>
                                     ))}
                                 </div>
                             </div>
 
                             <div className="lg:col-span-7 grid md:grid-cols-2 gap-6">
-                                <div className="bg-white p-8 rounded-2xl shadow-sm border border-border space-y-4">
-                                    <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center">
+                                <div className="bg-navy p-8 rounded-2xl shadow-sm border border-white/10 space-y-4">
+                                    <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center">
                                         <Thermometer className="h-6 w-6 text-accent" />
                                     </div>
-                                    <h3 className="text-xl font-bold text-primary">Cold-Chain Mastery</h3>
-                                    <p className="text-primary/60 text-sm leading-relaxed">
+                                    <h3 className="text-xl font-bold text-white">Cold-Chain Mastery</h3>
+                                    <p className="text-white/60 text-sm leading-relaxed">
                                         Validated handling procedures and real-time monitoring ensure uninterrupted temperature compliance and full traceability.
                                     </p>
                                 </div>
 
-                                <div className="bg-white p-8 rounded-2xl shadow-sm border border-border space-y-4">
-                                    <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center">
+                                <div className="bg-navy p-8 rounded-2xl shadow-sm border border-white/10 space-y-4">
+                                    <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center">
                                         <ShieldCheck className="h-6 w-6 text-accent" />
                                     </div>
-                                    <h3 className="text-xl font-bold text-primary">Regulatory Rigor</h3>
-                                    <p className="text-primary/60 text-sm leading-relaxed">
+                                    <h3 className="text-xl font-bold text-white">Regulatory Rigor</h3>
+                                    <p className="text-white/60 text-sm leading-relaxed">
                                         Built on strict compliance protocols and quality assurance systems with zero-tolerance operational discipline.
                                     </p>
                                 </div>
 
-                                <div className="bg-white p-8 rounded-2xl shadow-sm border border-border space-y-4">
-                                    <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center">
+                                <div className="bg-navy p-8 rounded-2xl shadow-sm border border-white/10 space-y-4">
+                                    <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center">
                                         <Zap className="h-6 w-6 text-accent" />
                                     </div>
-                                    <h3 className="text-xl font-bold text-primary">Life-Saving Speed</h3>
-                                    <p className="text-primary/60 text-sm leading-relaxed">
+                                    <h3 className="text-xl font-bold text-white">Life-Saving Speed</h3>
+                                    <p className="text-white/60 text-sm leading-relaxed">
                                         When healthcare systems depend on reliability, we deliver with certainty, protecting vaccines and critical medical cargo.
                                     </p>
                                 </div>
 
-                                <div className="bg-white p-8 rounded-2xl shadow-sm border border-border space-y-4">
-                                    <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center">
+                                <div className="bg-navy p-8 rounded-2xl shadow-sm border border-white/10 space-y-4">
+                                    <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center">
                                         <Globe className="h-6 w-6 text-accent" />
                                     </div>
-                                    <h3 className="text-xl font-bold text-primary">Global Health Reach</h3>
-                                    <p className="text-primary/60 text-sm leading-relaxed">
+                                    <h3 className="text-xl font-bold text-white">Global Health Reach</h3>
+                                    <p className="text-white/60 text-sm leading-relaxed">
                                         Supporting global trade and economic continuity through a robust operational architecture engineered for scale.
                                     </p>
                                 </div>
@@ -190,11 +190,11 @@ export default function AboutUs() {
                 </section>
 
                 {/* Commitment to Excellence */}
-                <section className="py-24 md:py-32 bg-white">
+                <section className="py-24 md:py-32 bg-navy">
                     <div className="container mx-auto px-4 lg:px-8">
                         <div className="max-w-3xl mb-16 space-y-4">
-                            <span className="text-sm font-bold uppercase tracking-[0.2em] text-accent">Our Commitment</span>
-                            <h2 className="text-4xl md:text-5xl font-light text-primary tracking-tight">Standards Without <span className="italic">Compromise</span></h2>
+                            <span className="text-sm font-bold uppercase tracking-[0.2em] logo-gradient-text">Our Commitment</span>
+                            <h2 className="text-4xl md:text-5xl font-light text-white tracking-tight">Standards Without <span className="italic">Compromise</span></h2>
                         </div>
 
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
@@ -232,12 +232,12 @@ export default function AboutUs() {
                             ].map((item, i) => (
                                 <div key={i} className="group">
                                     <div className="flex gap-6">
-                                        <div className="flex-shrink-0 w-12 h-12 bg-muted rounded-full flex items-center justify-center group-hover:bg-accent group-hover:text-white transition-colors duration-300">
-                                            <item.icon className="h-5 w-5" />
+                                        <div className="flex-shrink-0 w-12 h-12 bg-white/5 rounded-full flex items-center justify-center group-hover:bg-accent group-hover:text-white transition-colors duration-300">
+                                            <item.icon className="h-5 w-5 text-white" />
                                         </div>
                                         <div className="space-y-2">
-                                            <h4 className="text-xl font-bold text-primary">{item.title}</h4>
-                                            <p className="text-primary/60 leading-relaxed text-sm">
+                                            <h4 className="text-xl font-bold text-white">{item.title}</h4>
+                                            <p className="text-white/60 leading-relaxed text-sm">
                                                 {item.desc}
                                             </p>
                                         </div>
@@ -249,12 +249,12 @@ export default function AboutUs() {
                 </section>
 
                 {/* Final CTA/Statement */}
-                <section className="py-24 bg-[#F8F9FA] text-primary text-center border-t border-border">
+                <section className="py-24 bg-navy-light text-white text-center border-t border-white/10">
                     <div className="container mx-auto px-4">
                         <div className="max-w-4xl mx-auto space-y-8">
                             <h2 className="text-3xl md:text-5xl font-light italic">
                                 Moving more than cargo — <br />
-                                <span className="text-[#b38b77] font-medium not-italic">moving certainty, continuity, and progress.</span>
+                                <span className="logo-gradient-text font-medium not-italic">moving certainty, continuity, and progress.</span>
                             </h2>
                             <div className="h-px w-24 bg-accent mx-auto opacity-50"></div>
                             <p className="text-xl font-light tracking-widest uppercase opacity-80">VIOM Air Cargo</p>

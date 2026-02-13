@@ -71,7 +71,7 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white ${scrolled || mobileOpen ? "shadow-nav" : ""
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#111a2e] ${scrolled || mobileOpen ? "shadow-nav" : ""
         }`}
     >
       <div className="max-w-[94%] mx-auto flex items-center justify-between h-16 lg:h-20 px-4 lg:px-8 py-3 relative">
@@ -101,14 +101,14 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
           <a
             href="/about"
             onClick={(e) => handleLinkClick(e, "/about")}
-            className="px-4 py-2 text-sm font-medium rounded-lg transition-colors text-foreground hover:bg-muted"
+            className="px-4 py-2 text-sm font-medium rounded-lg transition-colors text-white hover:text-gold hover:bg-white/5"
           >
             About Us
           </a>
           <a
             href="#services"
             onClick={(e) => handleLinkClick(e, "#services")}
-            className="px-4 py-2 text-sm font-medium rounded-lg transition-colors text-foreground hover:bg-muted"
+            className="px-4 py-2 text-sm font-medium rounded-lg transition-colors text-white hover:text-gold hover:bg-white/5"
           >
             Services
           </a>
@@ -116,7 +116,7 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
           {/* Products trigger */}
           <button
             onClick={() => setCapabilitiesDrawerOpen(true)}
-            className="flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-colors text-foreground hover:bg-muted"
+            className="flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-colors text-white hover:text-gold hover:bg-white/5"
           >
             Capabilities <ChevronDown className="h-4 w-4" />
           </button>
@@ -134,7 +134,7 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
         <div className="hidden lg:flex items-center gap-1">
           <button
             onClick={() => setTrackModalOpen(true)}
-            className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-colors text-foreground hover:bg-muted"
+            className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-colors text-white hover:text-gold hover:bg-white/5"
           >
             <Package className="h-4 w-4" />
             Track Shipment
@@ -146,7 +146,7 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
               onClick={(e) => {
                 handleLinkClick(e, link.href);
               }}
-              className="px-4 py-2 text-sm font-medium rounded-lg transition-colors text-foreground hover:bg-muted"
+              className="px-4 py-2 text-sm font-medium rounded-lg transition-colors text-white hover:text-gold hover:bg-white/5"
             >
               {link.name}
             </a>
@@ -165,7 +165,7 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
           ) : (
             <button
               onClick={onSignInClick}
-              className="ml-4 px-5 py-2.5 text-sm font-semibold rounded-lg gradient-primary text-primary-foreground shadow-sm hover:opacity-90 transition-opacity"
+              className="ml-4 px-5 py-2.5 text-sm font-semibold rounded-lg bg-transparent border border-gold text-white shadow-sm hover:bg-white/10 transition-all"
             >
               Sign In
             </button>
@@ -175,7 +175,7 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden p-2 rounded-lg text-foreground z-50 hover:bg-muted transition-colors"
+          className="lg:hidden p-2 rounded-lg text-white z-50 hover:bg-white/10 transition-colors"
           aria-label="Toggle menu"
         >
           {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -196,7 +196,7 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-white/95 backdrop-blur-xl z-40 lg:hidden transition-transform duration-300 ease-in-out ${mobileOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed inset-0 bg-navy/95 backdrop-blur-xl z-40 lg:hidden transition-transform duration-300 ease-in-out ${mobileOpen ? "translate-x-0" : "translate-x-full"
           }`}
         style={{ top: "0", paddingTop: "80px" }}
       >
@@ -211,7 +211,7 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
                   handleLinkClick(e, "/about");
                   setMobileOpen(false);
                 }}
-                className="block px-4 py-3 text-base font-medium text-foreground rounded-lg hover:bg-muted transition-colors"
+                className="block px-4 py-3 text-base font-medium text-white rounded-lg hover:bg-white/5 transition-colors"
               >
                 About Us
               </a>
@@ -221,14 +221,14 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
                   handleLinkClick(e, "#services");
                   setMobileOpen(false);
                 }}
-                className="block px-4 py-3 text-base font-medium text-foreground rounded-lg hover:bg-muted transition-colors"
+                className="block px-4 py-3 text-base font-medium text-white rounded-lg hover:bg-white/5 transition-colors"
               >
                 Services
               </a>
             </div>
 
             {/* Then Products */}
-            <div className="border-t border-border/50 pt-6">
+            <div className="border-t border-white/10 pt-6">
               <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">
                 Capabilities
               </p>
@@ -241,7 +241,7 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
                       handleLinkClick(e, p.href);
                       setMobileOpen(false);
                     }}
-                    className="flex items-center px-4 py-3 text-sm font-medium text-foreground bg-muted/30 rounded-lg hover:bg-muted active:scale-95 transition-all"
+                    className="flex items-center px-4 py-3 text-sm font-medium text-white bg-white/5 rounded-lg hover:bg-white/10 active:scale-95 transition-all"
                   >
                     {p.name}
                   </a>
@@ -250,7 +250,7 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
             </div>
 
             {/* Then Fleet & Remaining */}
-            <div className="border-t border-border/50 pt-6">
+            <div className="border-t border-white/10 pt-6">
               <div className="space-y-2">
                 {/* <a
                   href="/fleet"
@@ -267,7 +267,7 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
                     setTrackModalOpen(true);
                     setMobileOpen(false);
                   }}
-                  className="w-full flex items-center gap-3 px-4 py-3 text-base font-medium text-foreground rounded-lg hover:bg-muted transition-colors"
+                  className="w-full flex items-center gap-3 px-4 py-3 text-base font-medium text-white rounded-lg hover:bg-white/5 transition-colors"
                 >
                   <Package className="h-5 w-5" />
                   Track Shipment
@@ -280,7 +280,7 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
                       handleLinkClick(e, link.href);
                       setMobileOpen(false);
                     }}
-                    className="block px-4 py-3 text-base font-medium text-foreground rounded-lg hover:bg-muted transition-colors"
+                    className="block px-4 py-3 text-base font-medium text-white rounded-lg hover:bg-white/5 transition-colors"
                   >
                     {link.name}
                   </a>
@@ -305,7 +305,7 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
                     setMobileOpen(false);
                     onSignInClick();
                   }}
-                  className="w-full px-5 py-3.5 text-base font-semibold rounded-xl gradient-primary text-primary-foreground shadow-lg active:scale-95 transition-all"
+                  className="w-full px-5 py-3.5 text-base font-semibold rounded-xl bg-transparent border border-gold text-white shadow-lg active:scale-95 hover:bg-white/10 transition-all"
                 >
                   Sign In
                 </button>

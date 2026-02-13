@@ -78,7 +78,7 @@ export default function Fleet() {
     };
 
     return (
-        <div className="min-h-screen bg-white overflow-hidden">
+        <div className="min-h-screen bg-navy overflow-hidden">
             <Navbar onSignInClick={() => setSignInOpen(true)} />
 
             <main className="pt-20">
@@ -101,10 +101,10 @@ export default function Fleet() {
                 </section>
 
                 {/* Aircraft Gallery */}
-                <section className="py-16 bg-muted/30">
+                <section className="py-16 bg-navy-light">
                     <div className="container mx-auto px-4 lg:px-8">
                         <div className="flex items-center justify-between mb-8">
-                            <h2 className="text-2xl font-light text-primary">Our Fleet</h2>
+                            <h2 className="text-2xl font-light text-white">Our Fleet</h2>
                         </div>
 
                         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
@@ -136,14 +136,14 @@ export default function Fleet() {
 
                 {/* Aircraft Breakdown Section */}
                 {selectedAircraft.specs.currentFleet && (
-                    <section className="py-12 lg:py-20 bg-white">
+                    <section className="py-12 lg:py-20 bg-navy">
                         <div className="container mx-auto px-4 lg:px-8">
                             <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
                                 {/* Visual Comparison / Image */}
                                 <div className="lg:col-span-2 space-y-6 lg:space-y-8 animate-fade-up">
                                     <div className="text-center">
-                                        <h2 className="text-2xl lg:text-3xl font-light text-primary mb-6 lg:mb-8">{selectedAircraft.name}</h2>
-                                        <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-muted/10 p-4 border border-border/50">
+                                        <h2 className="text-2xl lg:text-3xl font-light text-white mb-6 lg:mb-8">{selectedAircraft.name}</h2>
+                                        <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-white/5 p-4 border border-white/10">
                                             <img
                                                 src={selectedAircraft.image}
                                                 alt={selectedAircraft.name}
@@ -153,58 +153,58 @@ export default function Fleet() {
                                     </div>
 
                                     <div className="grid grid-cols-2 gap-3 lg:gap-4">
-                                        <div className="p-4 lg:p-6 rounded-xl bg-muted/50 border border-border">
+                                        <div className="p-4 lg:p-6 rounded-xl bg-white/5 border border-white/10">
                                             <Weight className="h-5 w-5 lg:h-6 lg:w-6 text-accent mb-2 lg:mb-3" />
-                                            <p className="text-[10px] lg:text-xs font-bold uppercase tracking-wider text-muted-foreground mb-1">Payload</p>
-                                            <p className="text-lg lg:text-xl font-semibold text-primary">{selectedAircraft.specs.tonnage}</p>
+                                            <p className="text-[10px] lg:text-xs font-bold uppercase tracking-wider text-white/60 mb-1">Payload</p>
+                                            <p className="text-lg lg:text-xl font-semibold text-white">{selectedAircraft.specs.tonnage}</p>
                                         </div>
-                                        <div className="p-4 lg:p-6 rounded-xl bg-muted/50 border border-border">
+                                        <div className="p-4 lg:p-6 rounded-xl bg-white/5 border border-white/10">
                                             <Maximize2 className="h-5 w-5 lg:h-6 lg:w-6 text-accent mb-2 lg:mb-3" />
-                                            <p className="text-[10px] lg:text-xs font-bold uppercase tracking-wider text-muted-foreground mb-1">Volume</p>
-                                            <p className="text-lg lg:text-xl font-semibold text-primary">{selectedAircraft.specs.volume}</p>
+                                            <p className="text-[10px] lg:text-xs font-bold uppercase tracking-wider text-white/60 mb-1">Volume</p>
+                                            <p className="text-lg lg:text-xl font-semibold text-white">{selectedAircraft.specs.volume}</p>
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* Specifications Table */}
                                 <div className="lg:col-span-3">
-                                    <div className="overflow-x-auto rounded-2xl border border-border bg-white shadow-sm">
+                                    <div className="overflow-x-auto rounded-2xl border border-white/10 bg-navy shadow-sm">
                                         <table className="w-full text-left border-collapse min-w-[300px]">
-                                            <tbody className="divide-y divide-border">
+                                            <tbody className="divide-y divide-white/10">
                                                 <tr>
-                                                    <th className="py-4 px-4 lg:py-5 lg:px-6 bg-muted/30 text-xs lg:text-sm font-semibold text-primary w-1/3">Current Fleet</th>
-                                                    <td className="py-4 px-4 lg:py-5 lg:px-6 text-xs lg:text-sm text-primary/80">{selectedAircraft.specs.currentFleet}</td>
+                                                    <th className="py-4 px-4 lg:py-5 lg:px-6 bg-white/5 text-xs lg:text-sm font-semibold text-white w-1/3">Current Fleet</th>
+                                                    <td className="py-4 px-4 lg:py-5 lg:px-6 text-xs lg:text-sm text-white/80">{selectedAircraft.specs.currentFleet}</td>
                                                 </tr>
                                                 <tr>
-                                                    <th className="py-4 px-4 lg:py-5 lg:px-6 bg-muted/30 text-xs lg:text-sm font-semibold text-primary">Main Deck</th>
-                                                    <td className="py-4 px-4 lg:py-5 lg:px-6 text-xs lg:text-sm text-primary/80 leading-relaxed">{selectedAircraft.specs.mainDeck}</td>
+                                                    <th className="py-4 px-4 lg:py-5 lg:px-6 bg-white/5 text-xs lg:text-sm font-semibold text-white">Main Deck</th>
+                                                    <td className="py-4 px-4 lg:py-5 lg:px-6 text-xs lg:text-sm text-white/80 leading-relaxed">{selectedAircraft.specs.mainDeck}</td>
                                                 </tr>
                                                 <tr>
-                                                    <th className="py-4 px-4 lg:py-5 lg:px-6 bg-muted/30 text-xs lg:text-sm font-semibold text-primary">Forward hold</th>
-                                                    <td className="py-4 px-4 lg:py-5 lg:px-6 text-xs lg:text-sm text-primary/80">{selectedAircraft.specs.forwardHold}</td>
+                                                    <th className="py-4 px-4 lg:py-5 lg:px-6 bg-white/5 text-xs lg:text-sm font-semibold text-white">Forward hold</th>
+                                                    <td className="py-4 px-4 lg:py-5 lg:px-6 text-xs lg:text-sm text-white/80">{selectedAircraft.specs.forwardHold}</td>
                                                 </tr>
                                                 <tr>
-                                                    <th className="py-4 px-4 lg:py-5 lg:px-6 bg-muted/30 text-xs lg:text-sm font-semibold text-primary">Aft hold</th>
-                                                    <td className="py-4 px-4 lg:py-5 lg:px-6 text-xs lg:text-sm text-primary/80">{selectedAircraft.specs.aftHold}</td>
+                                                    <th className="py-4 px-4 lg:py-5 lg:px-6 bg-white/5 text-xs lg:text-sm font-semibold text-white">Aft hold</th>
+                                                    <td className="py-4 px-4 lg:py-5 lg:px-6 text-xs lg:text-sm text-white/80">{selectedAircraft.specs.aftHold}</td>
                                                 </tr>
                                                 <tr>
-                                                    <th className="py-4 px-4 lg:py-5 lg:px-6 bg-muted/30 text-xs lg:text-sm font-semibold text-primary align-top">Door sizes</th>
+                                                    <th className="py-4 px-4 lg:py-5 lg:px-6 bg-white/5 text-xs lg:text-sm font-semibold text-white align-top">Door sizes</th>
                                                     <td className="py-0 px-0">
                                                         <div className="overflow-x-auto">
                                                             <table className="w-full border-collapse">
                                                                 <thead>
-                                                                    <tr className="border-b border-border/50">
-                                                                        <th className="py-2 px-4 lg:py-3 lg:px-6 text-[10px] font-bold uppercase tracking-widest text-muted-foreground whitespace-nowrap">Description</th>
-                                                                        <th className="py-2 px-4 lg:py-3 lg:px-6 text-[10px] font-bold uppercase tracking-widest text-muted-foreground whitespace-nowrap">Inches</th>
-                                                                        <th className="py-2 px-4 lg:py-3 lg:px-6 text-[10px] font-bold uppercase tracking-widest text-muted-foreground whitespace-nowrap">Centimeters</th>
+                                                                    <tr className="border-b border-white/10">
+                                                                        <th className="py-2 px-4 lg:py-3 lg:px-6 text-[10px] font-bold uppercase tracking-widest text-white/60 whitespace-nowrap">Description</th>
+                                                                        <th className="py-2 px-4 lg:py-3 lg:px-6 text-[10px] font-bold uppercase tracking-widest text-white/60 whitespace-nowrap">Inches</th>
+                                                                        <th className="py-2 px-4 lg:py-3 lg:px-6 text-[10px] font-bold uppercase tracking-widest text-white/60 whitespace-nowrap">Centimeters</th>
                                                                     </tr>
                                                                 </thead>
-                                                                <tbody className="divide-y divide-border/50">
+                                                                <tbody className="divide-y divide-white/10">
                                                                     {selectedAircraft.specs.doorSizes?.map((door, idx) => (
                                                                         <tr key={idx}>
-                                                                            <td className="py-2 px-4 lg:py-3 lg:px-6 text-xs font-medium text-primary whitespace-nowrap">{door.desc}</td>
-                                                                            <td className="py-2 px-4 lg:py-3 lg:px-6 text-xs text-primary/70 whitespace-nowrap">{door.inches}</td>
-                                                                            <td className="py-2 px-4 lg:py-3 lg:px-6 text-xs text-primary/70 whitespace-nowrap">{door.cm}</td>
+                                                                            <td className="py-2 px-4 lg:py-3 lg:px-6 text-xs font-medium text-white whitespace-nowrap">{door.desc}</td>
+                                                                            <td className="py-2 px-4 lg:py-3 lg:px-6 text-xs text-white/70 whitespace-nowrap">{door.inches}</td>
+                                                                            <td className="py-2 px-4 lg:py-3 lg:px-6 text-xs text-white/70 whitespace-nowrap">{door.cm}</td>
                                                                         </tr>
                                                                     ))}
                                                                 </tbody>
@@ -213,16 +213,16 @@ export default function Fleet() {
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <th className="py-4 px-4 lg:py-5 lg:px-6 bg-muted/30 text-xs lg:text-sm font-semibold text-primary">Cargo tonnage</th>
-                                                    <td className="py-4 px-4 lg:py-5 lg:px-6 text-xs lg:text-sm text-primary/80 font-medium">{selectedAircraft.specs.tonnage}</td>
+                                                    <th className="py-4 px-4 lg:py-5 lg:px-6 bg-white/5 text-xs lg:text-sm font-semibold text-white">Cargo tonnage</th>
+                                                    <td className="py-4 px-4 lg:py-5 lg:px-6 text-xs lg:text-sm text-white/80 font-medium">{selectedAircraft.specs.tonnage}</td>
                                                 </tr>
                                                 <tr>
-                                                    <th className="py-4 px-4 lg:py-5 lg:px-6 bg-muted/30 text-xs lg:text-sm font-semibold text-primary">Cargo Volume</th>
-                                                    <td className="py-4 px-4 lg:py-5 lg:px-6 text-xs lg:text-sm text-primary/80 font-medium">{selectedAircraft.specs.volume}</td>
+                                                    <th className="py-4 px-4 lg:py-5 lg:px-6 bg-white/5 text-xs lg:text-sm font-semibold text-white">Cargo Volume</th>
+                                                    <td className="py-4 px-4 lg:py-5 lg:px-6 text-xs lg:text-sm text-white/80 font-medium">{selectedAircraft.specs.volume}</td>
                                                 </tr>
                                                 <tr>
-                                                    <th className="py-4 px-4 lg:py-5 lg:px-6 bg-muted/30 text-xs lg:text-sm font-semibold text-primary">Maximum permitted height</th>
-                                                    <td className="py-4 px-4 lg:py-5 lg:px-6 text-xs lg:text-sm text-primary/80 italic">{selectedAircraft.specs.height}</td>
+                                                    <th className="py-4 px-4 lg:py-5 lg:px-6 bg-white/5 text-xs lg:text-sm font-semibold text-white">Maximum permitted height</th>
+                                                    <td className="py-4 px-4 lg:py-5 lg:px-6 text-xs lg:text-sm text-white/80 italic">{selectedAircraft.specs.height}</td>
                                                 </tr>
                                             </tbody>
                                         </table>

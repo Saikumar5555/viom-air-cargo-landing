@@ -23,21 +23,21 @@ export default function HeroSection({ onBookNow, onGetQuote }: HeroSectionProps)
 
           <h1 className="text-lg sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary-foreground leading-tight mb-2 lg:mb-6">
             Delivering the World, <br />
-            <span className="text-transparent bg-clip-text bg-[linear-gradient(180deg,#F8DAC8_47%,#AC836E_67%,#F8DCCB_100%)]">Mile by Mile</span>
+            <span className="logo-gradient-text">Mile by Mile</span>
           </h1>
           <p className="text-[11px] sm:text-base lg:text-lg text-primary-foreground/80 mb-5 lg:mb-10 max-w-lg lg:max-w-2xl leading-relaxed line-clamp-3 sm:line-clamp-none">
-            Where discretion meets excellence. VIOM AIR provides ultra-secure, white-glove cargo logistics for high-value shipments — from cutting-edge pharmaceuticals to priceless luxury goods.
+            VIOM AIR provides ultra-secure, white-glove cargo logistics for high-value shipments — from cutting-edge pharmaceuticals to priceless luxury goods.
           </p>
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 w-full sm:w-auto">
             <button
               onClick={onBookNow}
-              className="px-5 py-2.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider rounded-lg bg-[#b38b77] text-white shadow-lg hover:opacity-90 transition-all w-full sm:w-auto"
+              className="px-5 py-2.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider rounded-lg logo-gradient-bg text-[#1a2942] shadow-lg hover:opacity-90 transition-all w-full sm:w-auto border-2 border-transparent hover:border-[#1b2a47]"
             >
               Book now
             </button>
             <button
               onClick={onGetQuote}
-              className="px-5 py-2.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider rounded-lg gradient-primary text-primary-foreground shadow-lg hover:opacity-90 transition-all w-full sm:w-auto"
+              className="px-5 py-2.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider rounded-lg bg-[#1b2a47] text-white shadow-lg hover:opacity-90 transition-all w-full sm:w-auto border-2 border-transparent hover:border-[#B18874]"
             >
               Get a Quote
             </button>

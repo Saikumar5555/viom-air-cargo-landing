@@ -17,10 +17,10 @@ export default function CapabilitiesSection() {
   };
 
   return (
-    <section id="products" className="pt-10 pb-2 lg:pt-12 lg:pb-4 bg-background overflow-hidden relative">
+    <section id="products" className="pt-10 pb-2 lg:pt-12 lg:pb-4 bg-navy overflow-hidden relative">
       <div className="mx-auto w-full max-w-[94%] px-4 lg:px-8 mb-2 lg:mb-4 flex justify-between items-end">
         <div>
-          <p className="text-xl md:text-2xl font-bold uppercase" style={{ color: '#BA9684' }}>
+          <p className="text-xl md:text-2xl font-bold uppercase logo-gradient-text w-fit">
             EXPLORE OUR CAPABILITIES
           </p>
         </div>
@@ -61,8 +61,7 @@ export default function CapabilitiesSection() {
                   </h3>
                   <div className="overflow-hidden max-h-12 opacity-100 lg:max-h-0 lg:opacity-0 lg:group-hover:max-h-12 lg:group-hover:opacity-100 transition-all duration-500 ease-in-out">
                     <span
-                      className="inline-block mt-2 px-6 py-2 text-white text-sm font-medium rounded-full shadow-lg transform translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0 transition-transform duration-500 delay-100"
-                      style={{ backgroundColor: '#b38b77' }}
+                      className="inline-block mt-2 px-6 py-2 logo-gradient-bg text-[#1a2942] text-sm font-medium rounded-full shadow-lg transform translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0 transition-transform duration-500 delay-100"
                     >
                       Read More
                     </span>

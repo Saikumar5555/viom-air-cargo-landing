@@ -46,15 +46,15 @@
     --sidebar-ring: 220 60% 15%;
 
     /* Custom VIOM tokens - Navy Blue, White, and Rose Gold Theme */
-    --navy: 220 60% 15%;
+    --navy: 220 45% 19%;
     /* True Navy Blue */
-    --navy-light: 220 50% 25%;
+    --navy-light: 220 45% 19%;
     --sky: 220 40% 90%;
     /* Light Blue/Grey for accents */
     --sky-light: 220 20% 95%;
-    --gold: 29 30% 58%;
+    --gold: 20 31% 57%;
     /* Rose Gold from logo */
-    --gold-dark: 29 30% 48%;
+    --gold-dark: 20 31% 47%;
     --shadow-card: 0 4px 24px -4px hsl(220 60% 15% / 0.08);
     --shadow-card-hover: 0 12px 40px -8px hsl(220 60% 15% / 0.16);
     --shadow-nav: 0 2px 20px -2px hsl(220 60% 15% / 0.1);
@@ -82,7 +82,7 @@
   }
 
   .gradient-gold {
-    background: hsl(var(--accent));
+    background: linear-gradient(90deg, #B18874, #e8cfc2);
   }
 
   .gradient-hero-overlay {
@@ -143,6 +143,21 @@
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+
+  .logo-gradient-text {
+    background: linear-gradient(90deg, #B18874, #e8cfc2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .logo-gradient-bg {
+    background: linear-gradient(90deg, #B18874, #e8cfc2);
+    color: #1a2942;
+    background-origin: border-box;
+    background-clip: border-box;
+    /* Navy text for contrast */
   }
 }
 

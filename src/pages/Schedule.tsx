@@ -108,19 +108,19 @@ export default function Schedule() {
     };
 
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-navy">
             <Navbar onSignInClick={() => setSignInOpen(true)} />
 
             <main className="pt-32 pb-20">
                 <div className="mx-auto w-full max-w-[94%] px-4 lg:px-8">
-                    <h1 className="text-2xl sm:text-4xl md:text-5xl font-light text-primary mb-8 sm:mb-12 tracking-tight">
+                    <h1 className="text-2xl sm:text-4xl md:text-5xl font-light text-white mb-8 sm:mb-12 tracking-tight">
                         Schedule & Routing
                     </h1>
 
                     {/* Search Form Container */}
-                    <div className="bg-white rounded-2xl shadow-xl mb-12 border border-gray-100 flex flex-col lg:flex-row relative z-30">
-                        {/* Origin & Destination (Maroon Background) */}
-                        <div className="lg:w-1/2 bg-primary p-0 flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-white/20 rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none">
+                    <div className="bg-navy-light rounded-2xl shadow-xl mb-12 border border-white/10 flex flex-col lg:flex-row relative z-30">
+                        {/* Origin & Destination (Maroon/Navy Background) */}
+                        <div className="lg:w-1/2 bg-white/5 p-0 flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-white/10 rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none">
                             {/* Origin */}
                             <div ref={originRef} className="flex-1 p-4 sm:p-6 lg:p-8 relative flex flex-col justify-center cursor-pointer" onClick={() => setOriginSearchOpen(!originSearchOpen)}>
                                 <label className="text-[10px] uppercase tracking-wider text-white/60 mb-2 font-medium block text-center">Origin</label>
@@ -135,14 +135,14 @@ export default function Schedule() {
 
                                 {/* Origin Search Results */}
                                 {originSearchOpen && (
-                                    <div className="absolute top-[calc(100%+8px)] left-0 w-full bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden z-50 animate-in fade-in slide-in-from-top-2 duration-200">
-                                        <div className="p-4 border-b">
+                                    <div className="absolute top-[calc(100%+8px)] left-0 w-full bg-navy rounded-xl shadow-2xl border border-white/10 overflow-hidden z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+                                        <div className="p-4 border-b border-white/10">
                                             <div className="relative">
                                                 <input
                                                     type="text"
                                                     autoFocus
                                                     placeholder="Airport of origin"
-                                                    className="w-full pl-4 pr-10 py-2 border rounded-full text-sm focus:outline-none focus:border-primary"
+                                                    className="w-full pl-4 pr-10 py-2 border border-white/20 bg-white/5 rounded-full text-sm text-white focus:outline-none focus:border-gold placeholder:text-white/40"
                                                     value={originQuery}
                                                     onChange={(e) => setOriginQuery(e.target.value)}
                                                     onClick={(e) => e.stopPropagation()}
@@ -154,7 +154,7 @@ export default function Schedule() {
                                             {filteredOriginAirports.map((a) => (
                                                 <div
                                                     key={a.code}
-                                                    className="px-6 py-3 hover:bg-gray-50 cursor-pointer flex justify-between items-center group"
+                                                    className="px-6 py-3 hover:bg-white/5 cursor-pointer flex justify-between items-center group"
                                                     onClick={(e) => {
                                                         e.stopPropagation();
                                                         setOrigin(a);
@@ -162,14 +162,14 @@ export default function Schedule() {
                                                     }}
                                                 >
                                                     <div>
-                                                        <div className="text-sm font-medium text-primary group-hover:text-primary">{a.city}</div>
-                                                        <div className="text-[10px] text-gray-500">{a.country}</div>
+                                                        <div className="text-sm font-medium text-white group-hover:text-gold">{a.city}</div>
+                                                        <div className="text-[10px] text-white/50">{a.country}</div>
                                                     </div>
-                                                    <div className="text-xs font-bold text-gray-400">{a.code}</div>
+                                                    <div className="text-xs font-bold text-white/30">{a.code}</div>
                                                 </div>
                                             ))}
                                             {filteredOriginAirports.length === 0 && (
-                                                <div className="p-8 text-center text-gray-400 text-sm italic">No airports found</div>
+                                                <div className="p-8 text-center text-white/40 text-sm italic">No airports found</div>
                                             )}
                                         </div>
                                     </div>
@@ -190,14 +190,14 @@ export default function Schedule() {
 
                                 {/* Destination Search Results */}
                                 {destSearchOpen && (
-                                    <div className="absolute top-[calc(100%+8px)] left-0 w-full bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden z-50 animate-in fade-in slide-in-from-top-2 duration-200">
-                                        <div className="p-4 border-b">
+                                    <div className="absolute top-[calc(100%+8px)] left-0 w-full bg-navy rounded-xl shadow-2xl border border-white/10 overflow-hidden z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+                                        <div className="p-4 border-b border-white/10">
                                             <div className="relative">
                                                 <input
                                                     type="text"
                                                     autoFocus
                                                     placeholder="Airport of destination"
-                                                    className="w-full pl-4 pr-10 py-2 border rounded-full text-sm focus:outline-none focus:border-primary"
+                                                    className="w-full pl-4 pr-10 py-2 border border-white/20 bg-white/5 rounded-full text-sm text-white focus:outline-none focus:border-gold placeholder:text-white/40"
                                                     value={destQuery}
                                                     onChange={(e) => setDestQuery(e.target.value)}
                                                     onClick={(e) => e.stopPropagation()}
@@ -209,7 +209,7 @@ export default function Schedule() {
                                             {filteredDestAirports.map((a) => (
                                                 <div
                                                     key={a.code}
-                                                    className="px-6 py-3 hover:bg-gray-50 cursor-pointer flex justify-between items-center group"
+                                                    className="px-6 py-3 hover:bg-white/5 cursor-pointer flex justify-between items-center group"
                                                     onClick={(e) => {
                                                         e.stopPropagation();
                                                         setDestination(a);
@@ -217,14 +217,14 @@ export default function Schedule() {
                                                     }}
                                                 >
                                                     <div>
-                                                        <div className="text-sm font-medium text-primary group-hover:text-primary">{a.city}</div>
-                                                        <div className="text-[10px] text-gray-500">{a.country}</div>
+                                                        <div className="text-sm font-medium text-white group-hover:text-gold">{a.city}</div>
+                                                        <div className="text-[10px] text-white/50">{a.country}</div>
                                                     </div>
-                                                    <div className="text-xs font-bold text-gray-400">{a.code}</div>
+                                                    <div className="text-xs font-bold text-white/30">{a.code}</div>
                                                 </div>
                                             ))}
                                             {filteredDestAirports.length === 0 && (
-                                                <div className="p-8 text-center text-gray-400 text-sm italic">No airports found</div>
+                                                <div className="p-8 text-center text-white/40 text-sm italic">No airports found</div>
                                             )}
                                         </div>
                                     </div>
@@ -232,17 +232,17 @@ export default function Schedule() {
                             </div>
                         </div>
 
-                        {/* Date & Search (White/Light Grey Background) */}
-                        <div className="lg:w-1/2 bg-[#f8f9fa] p-4 sm:p-6 lg:p-8 flex flex-col justify-center rounded-b-2xl lg:rounded-r-2xl lg:rounded-bl-none z-10">
+                        {/* Date & Search (Darker Navy Background) */}
+                        <div className="lg:w-1/2 bg-white/5 p-4 sm:p-6 lg:p-8 flex flex-col justify-center rounded-b-2xl lg:rounded-r-2xl lg:rounded-bl-none z-10">
                             <div className="flex flex-col md:flex-row items-center gap-4 sm:gap-6 lg:gap-8">
                                 {/* Radios */}
                                 <div className="flex items-center gap-6">
                                     <label className="flex items-center gap-2 cursor-pointer group">
                                         <div className={cn(
                                             "w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all",
-                                            scheduleType === "specific" ? "border-primary" : "border-gray-300"
+                                            scheduleType === "specific" ? "border-gold" : "border-white/30"
                                         )}>
-                                            {scheduleType === "specific" && <div className="w-2.5 h-2.5 rounded-full bg-primary" />}
+                                            {scheduleType === "specific" && <div className="w-2.5 h-2.5 rounded-full bg-gold" />}
                                         </div>
                                         <input
                                             type="radio"
@@ -250,15 +250,15 @@ export default function Schedule() {
                                             checked={scheduleType === "specific"}
                                             onChange={() => setScheduleType("specific")}
                                         />
-                                        <span className={cn("text-sm transition-colors", scheduleType === "specific" ? "text-primary font-medium" : "text-gray-500")}>Specific Date</span>
+                                        <span className={cn("text-sm transition-colors", scheduleType === "specific" ? "text-gold font-medium" : "text-white/60")}>Specific Date</span>
                                     </label>
 
                                     <label className="flex items-center gap-2 cursor-pointer group">
                                         <div className={cn(
                                             "w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all",
-                                            scheduleType === "weekly" ? "border-primary" : "border-gray-300"
+                                            scheduleType === "weekly" ? "border-gold" : "border-white/30"
                                         )}>
-                                            {scheduleType === "weekly" && <div className="w-2.5 h-2.5 rounded-full bg-primary" />}
+                                            {scheduleType === "weekly" && <div className="w-2.5 h-2.5 rounded-full bg-gold" />}
                                         </div>
                                         <input
                                             type="radio"
@@ -266,19 +266,19 @@ export default function Schedule() {
                                             checked={scheduleType === "weekly"}
                                             onChange={() => setScheduleType("weekly")}
                                         />
-                                        <span className={cn("text-sm transition-colors", scheduleType === "weekly" ? "text-primary font-medium" : "text-gray-500")}>Weekly Schedule</span>
+                                        <span className={cn("text-sm transition-colors", scheduleType === "weekly" ? "text-gold font-medium" : "text-white/60")}>Weekly Schedule</span>
                                     </label>
                                 </div>
 
                                 {/* Date Input */}
                                 <div className="flex-1 w-full relative">
-                                    <div className="flex items-center justify-between border border-gray-200 rounded-lg p-3 bg-white shadow-sm">
+                                    <div className="flex items-center justify-between border border-white/10 rounded-lg p-3 bg-white/5 shadow-sm">
                                         <input
                                             type="date"
                                             defaultValue="2026-02-11"
-                                            className="bg-transparent border-none focus:outline-none text-sm font-medium w-full"
+                                            className="bg-transparent border-none focus:outline-none text-sm font-medium w-full text-white"
                                         />
-                                        <Calendar className="h-5 w-5 text-gray-400 pointer-events-none" />
+                                        <Calendar className="h-5 w-5 text-white/50 pointer-events-none" />
                                     </div>
                                 </div>
 
@@ -296,8 +296,8 @@ export default function Schedule() {
                     </div>
 
                     {/* Disclaimer */}
-                    <p className="text-xs text-primary/80 mb-20 flex items-start gap-2">
-                        International schedules showing our latest flight timings and aircraft details. <span className="text-primary font-semibold">Note: All schedule are subject to changes.</span>
+                    <p className="text-xs text-white/80 mb-20 flex items-start gap-2">
+                        International schedules showing our latest flight timings and aircraft details. <span className="text-gold font-semibold">Note: All schedule are subject to changes.</span>
                     </p>
 
 

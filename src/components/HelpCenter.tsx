@@ -33,13 +33,13 @@ export default function HelpCenter() {
   ];
 
   return (
-    <section id="help" className="py-10 lg:py-12 bg-gradient-to-b from-background to-sky-light/30">
+    <section id="help" className="py-10 lg:py-12 bg-white">
       <div className="mx-auto w-full max-w-[94%] px-4 lg:px-8">
         <div className="text-center mb-10">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#b38b77] mb-3">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] logo-gradient-text mb-3">
             Support
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold" style={{ color: '#BA9684' }}>Access Our Help Centre</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1b2a47]">Access Our Help Centre</h2>
         </div>
 
         {/* Card Grid */}
@@ -48,7 +48,7 @@ export default function HelpCenter() {
             <button
               key={card.id}
               onClick={() => navigate(`/support/${card.id}`)}
-              className="group relative overflow-hidden rounded-3xl bg-card border border-border shadow-card hover:shadow-card-hover transition-all duration-300 card-lift h-[80px] sm:h-[100px] lg:h-[120px] w-[140px] sm:w-[180px] lg:w-[220px] isolation-isolate"
+              className="group relative overflow-hidden rounded-3xl bg-card border border-gray-200 shadow-card hover:shadow-card-hover transition-all duration-300 card-lift h-[80px] sm:h-[100px] lg:h-[120px] w-[140px] sm:w-[180px] lg:w-[220px] isolation-isolate"
               style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}
             >
               {/* Wrapped in a rounded container to fix the sharp edges rendering bug during scale transition */}
