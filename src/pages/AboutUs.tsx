@@ -101,7 +101,7 @@ export default function AboutUs() {
                                 <div className="absolute -bottom-8 -right-8 bg-primary p-10 rounded-2xl shadow-2xl hidden md:block max-w-[280px]">
                                     <p className="text-white/60 text-sm font-medium uppercase tracking-widest mb-2">Operational Philosophy</p>
                                     <p className="text-xl font-light text-white leading-snug">
-                                        Engineered for reliability <span className="text-accent italic">at scale</span>.
+                                        Engineered for reliability <span className="text-accent font-bold italic">at scale</span>.
                                     </p>
                                 </div>
                             </div>

@@ -302,13 +302,15 @@ export default function RegisterModal({ isOpen, onClose, onBackToSignIn, onRegis
                                 mobileNumber: "",
                                 agreeToTerms: false,
                             })}
-                            className="flex-1 py-3.5 rounded-lg border-2 border-primary text-primary font-bold text-sm uppercase tracking-wider hover:bg-primary hover:text-primary-foreground transition-all"
+                            className="flex-1 py-3.5 rounded-lg border-2 font-bold text-sm uppercase tracking-wider transition-all"
+                            style={{ borderColor: "#BA9684", color: "#BA9684" }}
                         >
                             Reset
                         </button>
                         <button
                             type="submit"
-                            className="flex-1 py-3.5 rounded-lg gradient-primary text-primary-foreground font-bold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity"
+                            className="flex-1 py-3.5 rounded-lg text-white font-bold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity"
+                            style={{ backgroundColor: "#BA9684" }}
                         >
                             Register
                         </button>

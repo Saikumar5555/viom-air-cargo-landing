@@ -39,7 +39,7 @@ export default function HelpCenter() {
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#b38b77] mb-3">
             Support
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Access Our Help Centre</h2>
+          <h2 className="text-3xl md:text-4xl font-bold" style={{ color: '#BA9684' }}>Access Our Help Centre</h2>
         </div>
 
         {/* Card Grid */}
@@ -48,17 +48,20 @@ export default function HelpCenter() {
             <button
               key={card.id}
               onClick={() => navigate(`/support/${card.id}`)}
-              className="group relative overflow-hidden rounded-2xl bg-card border border-border shadow-card hover:shadow-card-hover transition-all duration-300 card-lift h-[80px] sm:h-[100px] lg:h-[120px] w-[140px] sm:w-[180px] lg:w-[220px]"
-
+              className="group relative overflow-hidden rounded-3xl bg-card border border-border shadow-card hover:shadow-card-hover transition-all duration-300 card-lift h-[80px] sm:h-[100px] lg:h-[120px] w-[140px] sm:w-[180px] lg:w-[220px] isolation-isolate"
+              style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}
             >
-              {/* Background Image */}
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                style={{ backgroundImage: `url(${card.backgroundImage})` }}
-              />
+              {/* Wrapped in a rounded container to fix the sharp edges rendering bug during scale transition */}
+              <div className="absolute inset-0 rounded-3xl overflow-hidden translate-z-0">
+                {/* Background Image */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110 transform-gpu"
+                  style={{ backgroundImage: `url(${card.backgroundImage})` }}
+                />
 
-              {/* Gradient Overlay - Subtle for clearer images */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                {/* Gradient Overlay - Subtle for clearer images */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              </div>
 
               {/* Content */}
               <div className="relative p-2 h-full flex flex-col items-center justify-end text-center pb-2">

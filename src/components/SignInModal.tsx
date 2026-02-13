@@ -80,7 +80,8 @@ export default function SignInModal({ isOpen, onClose, onRegisterClick, onSignIn
 
                     <button
                         type="submit"
-                        className="w-full py-3.5 rounded-lg gradient-primary text-primary-foreground font-bold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity"
+                        className="w-full py-3.5 rounded-lg text-white font-bold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity"
+                        style={{ backgroundColor: "#BA9684" }}
                     >
                         Sign In
                     </button>

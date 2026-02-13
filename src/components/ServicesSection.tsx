@@ -6,8 +6,8 @@ export default function ServicesSection() {
     return (
         <section id="services" className="pt-2 pb-6 lg:pt-4 lg:pb-10 bg-background">
             <div className="mx-auto w-full max-w-[94%] px-4 lg:px-8 mb-4">
-                <p className="text-xl md:text-2xl font-light text-muted-foreground">
-                    Our Services
+                <p className="text-xl md:text-2xl font-bold uppercase" style={{ color: '#BA9684' }}>
+                    OUR SERVICES
                 </p>
             </div>
 

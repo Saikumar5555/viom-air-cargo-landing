@@ -1,9 +1,9 @@
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { products } from "@/data/products";
+import { capabilities } from "@/data/capabilities";
 import { Link } from "react-router-dom";
 
-export default function ProductsSection() {
+export default function CapabilitiesSection() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: 'left' | 'right') => {
@@ -17,11 +17,11 @@ export default function ProductsSection() {
   };
 
   return (
-    <section id="products" className="pt-0 pb-2 lg:pt-0 lg:pb-4 bg-background overflow-hidden relative">
+    <section id="products" className="pt-10 pb-2 lg:pt-12 lg:pb-4 bg-background overflow-hidden relative">
       <div className="mx-auto w-full max-w-[94%] px-4 lg:px-8 mb-2 lg:mb-4 flex justify-between items-end">
         <div>
-          <p className="text-xl md:text-2xl font-light text-muted-foreground">
-            Explore Our Products
+          <p className="text-xl md:text-2xl font-bold uppercase" style={{ color: '#BA9684' }}>
+            EXPLORE OUR CAPABILITIES
           </p>
         </div>
       </div>
@@ -35,18 +35,19 @@ export default function ProductsSection() {
           className="overflow-x-auto pb-0 scrollbar-hide snap-x snap-mandatory"
         >
           <div className="flex gap-4 lg:gap-6 w-max xl:w-full">
-            {products.map((product) => (
+            {capabilities.map((product) => (
               <Link
                 key={product.id}
-                to={`/product/${product.id}`}
-                className="group relative h-[300px] w-[85vw] sm:w-[45vw] md:w-[40vw] lg:w-[30vw] xl:w-auto xl:flex-1 min-w-[260px] xl:min-w-0 flex-shrink-0 xl:shrink overflow-hidden rounded-xl cursor-pointer transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 snap-center isolation-isolate transform-gpu"
+                to={`/capability/${product.id}`}
+                className="group relative h-[300px] w-[85vw] sm:w-[45vw] md:w-[40vw] lg:w-[30vw] xl:w-auto xl:flex-1 min-w-[260px] xl:min-w-0 flex-shrink-0 xl:shrink overflow-hidden rounded-[2rem] cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 snap-center isolation-isolate transform-gpu"
+                style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}
               >
-                {/* Background Image */}
-                <div className="absolute inset-0">
+                {/* Background Image Container with redundant rounding and GPU acceleration */}
+                <div className="absolute inset-0 rounded-[2rem] overflow-hidden translate-z-0">
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110 transform-gpu"
                     loading="lazy"
                   />
                   {/* Overlay */}

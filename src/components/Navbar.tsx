@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, FileText, Package } from "lucide-react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
-import ProductsDrawer from "./ProductsDrawer";
+import CapabilitiesDrawer from "./CapabilitiesDrawer";
+import QuoteModal from "./QuoteModal";
+import TrackShipmentModal from "./TrackShipmentModal";
 
 const centerLinks = [
   { name: "Services", href: "#services" },
@@ -14,7 +16,7 @@ const rightLinks = [
   { name: "Contact Us", href: "/support" },
 ];
 
-import logo from "../assets/images/VIOM AIR.png";
+import logo from "../assets/VIOM AIR LOGO/__MACOSX/new.svg";
 
 interface NavbarProps {
   onSignInClick: () => void;
@@ -30,7 +32,9 @@ const products = [
 export default function Navbar({ onSignInClick }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [productsDrawerOpen, setProductsDrawerOpen] = useState(false);
+  const [capabilitiesDrawerOpen, setCapabilitiesDrawerOpen] = useState(false);
+  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
+  const [trackModalOpen, setTrackModalOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -55,7 +59,7 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
 
   // Prevent scrolling when mobile menu is open
   useEffect(() => {
-    if (mobileOpen || productsDrawerOpen) {
+    if (mobileOpen || capabilitiesDrawerOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
@@ -63,7 +67,7 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
     return () => {
       document.body.style.overflow = "unset";
     };
-  }, [mobileOpen, productsDrawerOpen]);
+  }, [mobileOpen, capabilitiesDrawerOpen]);
 
   return (
     <nav
@@ -111,10 +115,10 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
 
           {/* Products trigger */}
           <button
-            onClick={() => setProductsDrawerOpen(true)}
+            onClick={() => setCapabilitiesDrawerOpen(true)}
             className="flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-colors text-foreground hover:bg-muted"
           >
-            Products <ChevronDown className="h-4 w-4" />
+            Capabilities <ChevronDown className="h-4 w-4" />
           </button>
 
           {/* <a
@@ -128,6 +132,13 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
 
         {/* Desktop Nav - Right Links */}
         <div className="hidden lg:flex items-center gap-1">
+          <button
+            onClick={() => setTrackModalOpen(true)}
+            className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-colors text-foreground hover:bg-muted"
+          >
+            <Package className="h-4 w-4" />
+            Track Shipment
+          </button>
           {rightLinks.map((link) => (
             <a
               key={link.name}
@@ -169,9 +180,17 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
         >
           {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
-        <ProductsDrawer
-          isOpen={productsDrawerOpen}
-          onClose={() => setProductsDrawerOpen(false)}
+        <CapabilitiesDrawer
+          isOpen={capabilitiesDrawerOpen}
+          onClose={() => setCapabilitiesDrawerOpen(false)}
+        />
+        <QuoteModal
+          open={quoteModalOpen}
+          onClose={() => setQuoteModalOpen(false)}
+        />
+        <TrackShipmentModal
+          open={trackModalOpen}
+          onClose={() => setTrackModalOpen(false)}
         />
       </div>
 
@@ -211,7 +230,7 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
             {/* Then Products */}
             <div className="border-t border-border/50 pt-6">
               <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">
-                Products
+                Capabilities
               </p>
               <div className="grid grid-cols-2 gap-2">
                 {products.map((p) => (
@@ -243,6 +262,16 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
                 >
                   Fleet
                 </a> */}
+                <button
+                  onClick={() => {
+                    setTrackModalOpen(true);
+                    setMobileOpen(false);
+                  }}
+                  className="w-full flex items-center gap-3 px-4 py-3 text-base font-medium text-foreground rounded-lg hover:bg-muted transition-colors"
+                >
+                  <Package className="h-5 w-5" />
+                  Track Shipment
+                </button>
                 {rightLinks.map((link) => (
                   <a
                     key={link.name}

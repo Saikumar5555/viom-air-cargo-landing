@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { X, ArrowRight, Package, Thermometer, ShieldCheck, Truck, Plane, Leaf } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // Import images
 import pharmaImg from "../assets/images/temperature.jpg";
@@ -10,14 +10,14 @@ import generalImg from "../assets/images/general.jpg";
 import driveImg from "../assets/images/ViomHero.png"; // Charter image
 import exquisiteImg from "../assets/images/image.jpg"; // Placeholder
 
-const products = [
+const capabilitiesData = [
     {
         id: "healthcare",
         name: "Health Care",
         description: "Temperature-controlled solutions for pharmaceutical and life sciences cargo, ensuring integrity from origin to destination.",
         image: pharmaImg,
         icon: Thermometer,
-        href: "/product/healthcare"
+        href: "/capability/healthcare"
     },
     {
         id: "charter",
@@ -25,7 +25,7 @@ const products = [
         description: "Tailored air cargo charter solutions providing flexibility and capacity for urgent or specialized shipments.",
         image: driveImg,
         icon: Plane,
-        href: "/product/charter"
+        href: "/capability/charter"
     },
     {
         id: "airfreight",
@@ -33,7 +33,7 @@ const products = [
         description: "Reliable and efficient general air freight services connecting global markets with speed and precision.",
         image: generalImg,
         icon: Package,
-        href: "/product/air-freight"
+        href: "/capability/airfreight"
     },
     {
         id: "fresh",
@@ -41,17 +41,18 @@ const products = [
         description: "Expert handling of perishables to preserve freshness and quality throughout the supply chain.",
         image: freshImg,
         icon: Leaf,
-        href: "/product/fresh"
+        href: "/capability/fresh"
     }
 ];
 
-interface ProductsDrawerProps {
+interface CapabilitiesDrawerProps {
     isOpen: boolean;
     onClose: () => void;
 }
 
-export default function ProductsDrawer({ isOpen, onClose }: ProductsDrawerProps) {
-    const [activeProduct, setActiveProduct] = useState(products[0]);
+export default function CapabilitiesDrawer({ isOpen, onClose }: CapabilitiesDrawerProps) {
+    const navigate = useNavigate();
+    const [activeProduct, setActiveProduct] = useState(capabilitiesData[0]);
     const [isClosing, setIsClosing] = useState(false);
 
     // Handle escape key
@@ -91,13 +92,17 @@ export default function ProductsDrawer({ isOpen, onClose }: ProductsDrawerProps)
 
                 {/* Left Side: Product List */}
                 <div className="w-full md:w-1/2 border-r border-border bg-gray-50/50 flex flex-col pt-8 pb-8 px-6 overflow-y-auto">
-                    <h2 className="text-xl font-bold text-navy mb-6">Products</h2>
+                    <h2 className="text-xl font-bold text-navy mb-6">Capabilities</h2>
                     <div className="space-y-2">
-                        {products.map((product) => (
+                        {capabilitiesData.map((product) => (
                             <button
                                 key={product.id}
                                 onMouseEnter={() => setActiveProduct(product)}
-                                onClick={() => setActiveProduct(product)}
+                                onClick={() => {
+                                    setActiveProduct(product);
+                                    navigate(product.href);
+                                    handleClose();
+                                }}
                                 className={`w-full text-left px-6 py-4 rounded-xl transition-all duration-200 flex items-center justify-between group ${activeProduct.id === product.id
                                     ? "bg-navy text-white shadow-lg"
                                     : "hover:bg-muted text-gray-600 hover:text-navy"
@@ -136,7 +141,7 @@ export default function ProductsDrawer({ isOpen, onClose }: ProductsDrawerProps)
                                 <div className="h-8 w-8 rounded-full bg-gold/20 flex items-center justify-center backdrop-blur-md border border-gold/30">
                                     <activeProduct.icon className="h-4 w-4 text-gold" />
                                 </div>
-                                <span className="text-gold font-bold tracking-wider uppercase text-xs">Product Focus</span>
+                                <span className="text-gold font-bold tracking-wider uppercase text-xs">Capability Focus</span>
                             </div>
 
                             <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-4">

@@ -1,6 +1,6 @@
 import { Plane, HeartPulse, Leaf, Package } from "lucide-react";
 
-export interface Product {
+export interface Capability {
     id: string;
     name: string;
     icon: any;
@@ -15,7 +15,7 @@ export interface Product {
     category: string;
 }
 
-export const products: Product[] = [
+export const capabilities: Capability[] = [
     {
         id: "healthcare",
         name: "Health Care",

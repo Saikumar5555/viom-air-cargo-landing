@@ -3,9 +3,10 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import BookingModal from "@/components/BookingModal";
 import TrackShipmentModal from "@/components/TrackShipmentModal";
+import QuoteModal from "@/components/QuoteModal";
 import SignInModal from "@/components/SignInModal";
 import RegisterModal from "@/components/RegisterModal";
-import ProductsSection from "@/components/ProductsSection";
+import CapabilitiesSection from "@/components/CapabilitiesSection";
 import HelpCenter from "@/components/HelpCenter";
 import Footer from "@/components/Footer";
 
@@ -17,6 +18,7 @@ import DestinationsSection from "@/components/DestinationsSection";
 
 const Index = () => {
   const [bookingOpen, setBookingOpen] = useState(false);
+  const [quoteOpen, setQuoteOpen] = useState(false);
   const [trackOpen, setTrackOpen] = useState(false);
   const [signInOpen, setSignInOpen] = useState(false);
   const [registerOpen, setRegisterOpen] = useState(false);
@@ -72,17 +74,18 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar onSignInClick={() => setSignInOpen(true)} />
-      <HeroSection onBookNow={handleBookNowClick} onTrack={() => setTrackOpen(true)} />
+      <HeroSection onBookNow={handleBookNowClick} onGetQuote={() => setQuoteOpen(true)} />
 
 
 
-      <ProductsSection />
+      <CapabilitiesSection />
       <ServicesSection />
       <DestinationsSection />
       <HelpCenter />
       <Footer />
 
       <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />
+      <QuoteModal open={quoteOpen} onClose={() => setQuoteOpen(false)} />
       <TrackShipmentModal
         open={trackOpen}
         onClose={() => setTrackOpen(false)}
