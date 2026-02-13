@@ -33,7 +33,7 @@ export default function HelpCenter() {
   ];
 
   return (
-    <section id="help" className="py-10 lg:py-12 bg-white">
+    <section id="help" className="pt-4 pb-10 lg:pt-6 lg:pb-12 bg-white">
       <div className="mx-auto w-full max-w-[94%] px-4 lg:px-8">
         <div className="text-center mb-10">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] logo-gradient-text mb-3">

@@ -7,6 +7,7 @@ import { toast } from "sonner";
 import { Plane, Globe, Shield, Clock, Thermometer, ShieldCheck, Zap, Activity, CheckCircle2, Award, Briefcase, BarChart3 } from "lucide-react";
 import viomHero from "../assets/images/image.jpg";
 import viomAboutHero from "../assets/images/viomAir.png";
+import viomAboutImage from "../assets/backup_images/imageabout.png";
 
 export default function AboutUs() {
     const [signInOpen, setSignInOpen] = useState(false);
@@ -36,7 +37,7 @@ export default function AboutUs() {
         <div className="min-h-screen bg-navy">
             <Navbar onSignInClick={() => setSignInOpen(true)} />
 
-            <main className="pt-20">
+            <main>
                 {/* Hero Section */}
                 {/* Hero Section */}
                 <section className="relative h-[50dvh] sm:h-[80dvh] md:h-[90dvh] lg:h-[100dvh] min-h-[400px] flex items-center overflow-hidden text-white">
@@ -49,13 +50,13 @@ export default function AboutUs() {
                         <div className="absolute inset-0 bg-black/40"></div>
                     </div>
 
-                    <div className="container mx-auto px-4 lg:px-8 relative z-10">
-                        <div className="max-w-5xl">
-                            <h1 className="text-4xl md:text-7xl font-light mb-8 tracking-tight animate-fade-up">
+                    <div className="relative z-10 mx-auto w-full max-w-[94%] px-4 lg:px-8 mt-10 lg:mt-0">
+                        <div className="max-w-2xl xl:max-w-4xl animate-fade-up">
+                            <h1 className="text-lg sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-2 lg:mb-6 leading-tight tracking-tight">
                                 When Cargo <span className="italic logo-gradient-text font-medium">Matters</span>,<br />
                                 Nothing Can Be Left to <span className="font-medium">Chance</span>.
                             </h1>
-                            <p className="text-xl md:text-2xl text-white/70 max-w-3xl leading-relaxed animate-fade-up-delay-1">
+                            <p className="text-[11px] sm:text-base lg:text-lg text-white/70 max-w-lg lg:max-w-2xl leading-relaxed animate-fade-up-delay-1">
                                 VIOM Air Cargo is a premium air freight enterprise built for precision, resilience, and global reach.
                             </p>
                         </div>
@@ -63,7 +64,7 @@ export default function AboutUs() {
                 </section>
 
                 {/* Our Foundation */}
-                <section className="py-20 md:py-32 bg-navy">
+                <section className="py-12 md:py-20 bg-[#152238]">
                     <div className="container mx-auto px-4 lg:px-8">
                         <div className="grid lg:grid-cols-2 gap-16 items-center">
                             <div className="space-y-8 animate-fade-up">
@@ -92,9 +93,9 @@ export default function AboutUs() {
                             <div className="relative animate-fade-up-delay-1">
                                 <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-navy group">
                                     <img
-                                        src={viomHero}
+                                        src={viomAboutImage}
                                         alt="VIOM Air Cargo Operation"
-                                        className="w-full h-auto block transition-transform duration-700 group-hover:scale-105"
+                                        className="w-full h-auto block transition-transform duration-700 group-hover:scale-105 opacity-80"
                                         loading="lazy"
                                     />
                                 </div>
@@ -110,7 +111,7 @@ export default function AboutUs() {
                 </section>
 
                 {/* Pharmaceutical Logistics - Specialized Section */}
-                <section className="py-24 md:py-32 bg-navy-light border-y border-white/10">
+                <section className="py-12 md:py-20 bg-navy-light border-y border-white/10">
                     <div className="container mx-auto px-4 lg:px-8">
                         <div className="grid lg:grid-cols-12 gap-16">
                             <div className="lg:col-span-5 space-y-6">
@@ -190,9 +191,9 @@ export default function AboutUs() {
                 </section>
 
                 {/* Commitment to Excellence */}
-                <section className="py-24 md:py-32 bg-navy">
+                <section className="py-10 md:py-20 bg-[#152238]">
                     <div className="container mx-auto px-4 lg:px-8">
-                        <div className="max-w-3xl mb-16 space-y-4">
+                        <div className="max-w-3xl mb-8 space-y-4">
                             <span className="text-sm font-bold uppercase tracking-[0.2em] logo-gradient-text">Our Commitment</span>
                             <h2 className="text-4xl md:text-5xl font-light text-white tracking-tight">Standards Without <span className="italic">Compromise</span></h2>
                         </div>
@@ -249,7 +250,7 @@ export default function AboutUs() {
                 </section>
 
                 {/* Final CTA/Statement */}
-                <section className="py-24 bg-navy-light text-white text-center border-t border-white/10">
+                <section className="py-16 bg-navy-light text-white text-center border-t border-white/10">
                     <div className="container mx-auto px-4">
                         <div className="max-w-4xl mx-auto space-y-8">
                             <h2 className="text-3xl md:text-5xl font-light italic">
