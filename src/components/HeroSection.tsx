@@ -24,8 +24,8 @@ export default function HeroSection({ onBookNow, onTrack }: HeroSectionProps) {
             Global Air Cargo Solutions
           </p>
           <h1 className="text-lg sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary-foreground leading-tight mb-2 lg:mb-6">
-            Delivering the World,{" "}
-            <span className="text-[#b38b77]">Mile by Mile</span>
+            Delivering the World, <br />
+            <span className="text-transparent bg-clip-text bg-[linear-gradient(180deg,#B6947E_100%,#8F6959_100%,#F8DAC8_100%,#AC836E_100%,#B6947E_100%)]">Mile by Mile</span>
           </h1>
           <p className="text-[11px] sm:text-base lg:text-lg text-primary-foreground/80 mb-5 lg:mb-10 max-w-lg lg:max-w-2xl leading-relaxed line-clamp-3 sm:line-clamp-none">
             Where discretion meets excellence. VIOM AIR provides ultra-secure, white-glove cargo logistics for high-value shipments — from cutting-edge pharmaceuticals to priceless luxury goods.
