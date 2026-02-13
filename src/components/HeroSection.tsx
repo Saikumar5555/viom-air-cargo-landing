@@ -7,12 +7,12 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onBookNow, onTrack }: HeroSectionProps) {
   return (
-    <section className="relative h-[50dvh] sm:h-[80dvh] md:h-[90dvh] lg:h-[100dvh] min-h-[400px] flex items-end sm:items-center overflow-hidden pb-16 sm:pb-0">
+    <section className="relative h-[50dvh] sm:h-[80dvh] md:h-[90dvh] lg:h-[100dvh] min-h-[400px] flex items-end sm:items-center overflow-hidden pb-16 sm:pb-0 bg-[hsl(var(--navy))]">
       {/* Background image */}
       <img
         src={heroImage}
         alt="VIOM AIR cargo aircraft flying above clouds"
-        className="absolute inset-0 w-full h-full object-cover object-right md:object-[60%_20%] lg:object-[75%_center] 2xl:object-center"
+        className="absolute inset-0 w-full h-full object-cover object-right md:object-[60%_20%] lg:object-[75%_center] 2xl:object-center opacity-70"
         fetchPriority="high"
       />
       {/* Overlay */}

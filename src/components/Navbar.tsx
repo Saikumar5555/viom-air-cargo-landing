@@ -11,7 +11,7 @@ const centerLinks = [
 ];
 
 const rightLinks = [
-  { name: "Support", href: "/support" },
+  { name: "Contact Us", href: "/support" },
 ];
 
 import logo from "../assets/images/VIOM AIR.png";
@@ -21,7 +21,7 @@ interface NavbarProps {
 }
 
 const products = [
-  { name: "CHARTER", href: "#products" },
+  { name: "Charter", href: "#products" },
   { name: "Health Care", href: "#products" },
   { name: "Air Freight", href: "#products" },
   { name: "Fresh", href: "#products" },
@@ -94,6 +94,21 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
 
         {/* Desktop Nav - Center Links */}
         <div className="hidden lg:flex items-center gap-1 mx-auto">
+          <a
+            href="/about"
+            onClick={(e) => handleLinkClick(e, "/about")}
+            className="px-4 py-2 text-sm font-medium rounded-lg transition-colors text-foreground hover:bg-muted"
+          >
+            About Us
+          </a>
+          <a
+            href="#services"
+            onClick={(e) => handleLinkClick(e, "#services")}
+            className="px-4 py-2 text-sm font-medium rounded-lg transition-colors text-foreground hover:bg-muted"
+          >
+            Services
+          </a>
+
           {/* Products trigger */}
           <button
             onClick={() => setProductsDrawerOpen(true)}
@@ -102,19 +117,13 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
             Products <ChevronDown className="h-4 w-4" />
           </button>
 
-
-          {centerLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={(e) => {
-                handleLinkClick(e, link.href);
-              }}
-              className="px-4 py-2 text-sm font-medium rounded-lg transition-colors text-foreground hover:bg-muted"
-            >
-              {link.name}
-            </a>
-          ))}
+          {/* <a
+            href="/fleet"
+            onClick={(e) => handleLinkClick(e, "/fleet")}
+            className="px-4 py-2 text-sm font-medium rounded-lg transition-colors text-foreground hover:bg-muted"
+          >
+            Fleet
+          </a> */}
         </div>
 
         {/* Desktop Nav - Right Links */}
@@ -174,7 +183,33 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
       >
         <div className="flex flex-col h-full overflow-y-auto px-6 pb-20">
           <div className="space-y-6">
-            <div>
+
+            {/* About Us & Services First */}
+            <div className="space-y-2">
+              <a
+                href="/about"
+                onClick={(e) => {
+                  handleLinkClick(e, "/about");
+                  setMobileOpen(false);
+                }}
+                className="block px-4 py-3 text-base font-medium text-foreground rounded-lg hover:bg-muted transition-colors"
+              >
+                About Us
+              </a>
+              <a
+                href="#services"
+                onClick={(e) => {
+                  handleLinkClick(e, "#services");
+                  setMobileOpen(false);
+                }}
+                className="block px-4 py-3 text-base font-medium text-foreground rounded-lg hover:bg-muted transition-colors"
+              >
+                Services
+              </a>
+            </div>
+
+            {/* Then Products */}
+            <div className="border-t border-border/50 pt-6">
               <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">
                 Products
               </p>
@@ -195,29 +230,19 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
               </div>
             </div>
 
-            <div className="border-t border-border/50 pt-6">
-              <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">
-                Services & Company
-              </p>
-              <div className="space-y-2">
-                {centerLinks.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    onClick={(e) => {
-                      handleLinkClick(e, link.href);
-                      setMobileOpen(false);
-                    }}
-                    className="block px-4 py-3 text-base font-medium text-foreground rounded-lg hover:bg-muted transition-colors"
-                  >
-                    {link.name}
-                  </a>
-                ))}
-              </div>
-            </div>
-
+            {/* Then Fleet & Remaining */}
             <div className="border-t border-border/50 pt-6">
               <div className="space-y-2">
+                {/* <a
+                  href="/fleet"
+                  onClick={(e) => {
+                    handleLinkClick(e, "/fleet");
+                    setMobileOpen(false);
+                  }}
+                  className="block px-4 py-3 text-base font-medium text-foreground rounded-lg hover:bg-muted transition-colors"
+                >
+                  Fleet
+                </a> */}
                 {rightLinks.map((link) => (
                   <a
                     key={link.name}

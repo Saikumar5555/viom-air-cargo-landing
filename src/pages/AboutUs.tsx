@@ -51,11 +51,11 @@ export default function AboutUs() {
 
                     <div className="container mx-auto px-4 lg:px-8 relative z-10">
                         <div className="max-w-5xl">
-                            <h1 className="text-5xl md:text-8xl font-light mb-8 tracking-tight animate-fade-up">
+                            <h1 className="text-4xl md:text-7xl font-light mb-8 tracking-tight animate-fade-up">
                                 When Cargo <span className="italic text-accent font-medium">Matters</span>,<br />
                                 Nothing Can Be Left to <span className="font-medium">Chance</span>.
                             </h1>
-                            <p className="text-2xl md:text-3xl text-white/70 max-w-3xl leading-relaxed animate-fade-up-delay-1">
+                            <p className="text-xl md:text-2xl text-white/70 max-w-3xl leading-relaxed animate-fade-up-delay-1">
                                 VIOM Air Cargo is a premium air freight enterprise built for precision, resilience, and global reach.
                             </p>
                         </div>
