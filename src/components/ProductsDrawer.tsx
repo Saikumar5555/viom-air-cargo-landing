@@ -3,12 +3,12 @@ import { X, ArrowRight, Package, Thermometer, ShieldCheck, Truck, Plane, Leaf } 
 import { Link } from "react-router-dom";
 
 // Import images
-import pharmaImg from "../assets/VIOM AIR LOGO/temperature.jpg";
-import freshImg from "../assets/VIOM AIR LOGO/fresh.jpg";
-import secureImg from "../assets/VIOM AIR LOGO/claims.png"; // Placeholder
-import generalImg from "../assets/VIOM AIR LOGO/general.jpg";
-import driveImg from "../assets/VIOM AIR LOGO/viomHero.jpeg"; // Placeholder
-import exquisiteImg from "../assets/VIOM AIR LOGO/image.jpg"; // Placeholder
+import pharmaImg from "../assets/images/temperature.jpg";
+import freshImg from "../assets/images/fresh.jpg";
+import secureImg from "../assets/images/claims.png"; // Placeholder
+import generalImg from "../assets/images/general.jpg";
+import driveImg from "../assets/images/ViomHero.png"; // Charter image
+import exquisiteImg from "../assets/images/image.jpg"; // Placeholder
 
 const products = [
     {

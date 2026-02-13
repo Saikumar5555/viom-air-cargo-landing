@@ -9,10 +9,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
 
-import faqImg from "@/assets/VIOM AIR LOGO/faq.jpg";
-import locationImg from "@/assets/VIOM AIR LOGO/location.jpg";
-import supportImg from "@/assets/VIOM AIR LOGO/support.jpg";
-import claimsImg from "@/assets/VIOM AIR LOGO/claims.png";
+import faqImg from "@/assets/images/faq.jpg";
+import locationImg from "@/assets/images/location.jpg";
+import supportImg from "@/assets/images/support.jpg";
+import claimsImg from "@/assets/images/claims.png";
 
 type Section = "claims" | "contact" | "faq" | "locations";
 

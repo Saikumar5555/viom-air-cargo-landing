@@ -3,13 +3,13 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 // Import local images
-import dubaiImg from "@/assets/VIOM AIR LOGO/Dubai.jpg";
-import qatarImg from "@/assets/VIOM AIR LOGO/Qatar.jpg";
-import singaporeImg from "@/assets/VIOM AIR LOGO/Singapore.jpg";
-import thailandImg from "@/assets/VIOM AIR LOGO/Thailand.jpg";
-import usImg from "@/assets/VIOM AIR LOGO/US.jpg";
-import malaysiaImg from "@/assets/VIOM AIR LOGO/malaysia.jpg";
-import africaImg from "@/assets/VIOM AIR LOGO/Africa.jpg";
+import dubaiImg from "@/assets/images/Dubai.jpg";
+import qatarImg from "@/assets/images/Qatar.jpg";
+import singaporeImg from "@/assets/images/Singapore.jpg";
+import thailandImg from "@/assets/images/Thailand.jpg";
+import usImg from "@/assets/images/US.jpg";
+import malaysiaImg from "@/assets/images/malaysia.jpg";
+import africaImg from "@/assets/images/Africa.jpg";
 
 const destinations = [
     {

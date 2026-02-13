@@ -1,10 +1,10 @@
 import { ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-import faqImg from "@/assets/VIOM AIR LOGO/faq.jpg";
-import locationImg from "@/assets/VIOM AIR LOGO/location.jpg";
-import supportImg from "@/assets/VIOM AIR LOGO/support.jpg";
-import claimsImg from "@/assets/VIOM AIR LOGO/claims.png";
+import faqImg from "@/assets/images/faq.jpg";
+import locationImg from "@/assets/images/location.jpg";
+import supportImg from "@/assets/images/support.jpg";
+import claimsImg from "@/assets/images/claims.png";
 
 export default function HelpCenter() {
   const navigate = useNavigate();
@@ -43,12 +43,12 @@ export default function HelpCenter() {
         </div>
 
         {/* Card Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8">
           {helpCards.map((card) => (
             <button
               key={card.id}
               onClick={() => navigate(`/support/${card.id}`)}
-              className="group relative overflow-hidden rounded-none bg-card border border-border shadow-card hover:shadow-card-hover transition-all duration-300 card-lift h-[200px] sm:h-[260px] lg:h-[320px]"
+              className="group relative overflow-hidden rounded-none bg-card border border-border shadow-card hover:shadow-card-hover transition-all duration-300 card-lift h-[80px] sm:h-[100px] lg:h-[120px] w-[140px] sm:w-[180px] lg:w-[220px]"
             >
               {/* Background Image */}
               <div
@@ -60,11 +60,11 @@ export default function HelpCenter() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
               {/* Content */}
-              <div className="relative p-8 h-full flex flex-col items-center justify-end text-center pb-10">
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-3 drop-shadow-2xl">{card.title}</h3>
-                <div className="flex items-center gap-2 text-white/90 group-hover:text-white transition-colors">
-                  <span className="text-sm font-medium">Explore</span>
-                  <ChevronRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <div className="relative p-2 h-full flex flex-col items-center justify-end text-center pb-2">
+                <h3 className="text-xs md:text-sm font-bold text-white mb-1 drop-shadow-2xl">{card.title}</h3>
+                <div className="flex items-center gap-1 text-white/90 group-hover:text-white transition-colors">
+                  <span className="text-[10px] md:text-xs font-medium">Explore</span>
+                  <ChevronRight className="h-3 w-3 md:h-4 md:w-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
             </button>

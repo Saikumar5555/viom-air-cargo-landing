@@ -39,7 +39,7 @@ export default function ProductsSection() {
               <Link
                 key={product.id}
                 to={`/product/${product.id}`}
-                className="group relative h-[300px] w-[85vw] sm:w-[45vw] md:w-[40vw] lg:w-[30vw] xl:w-auto xl:flex-1 min-w-[260px] xl:min-w-0 flex-shrink-0 xl:shrink overflow-hidden rounded-none cursor-pointer transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 snap-center"
+                className="group relative h-[300px] w-[85vw] sm:w-[45vw] md:w-[40vw] lg:w-[30vw] xl:w-auto xl:flex-1 min-w-[260px] xl:min-w-0 flex-shrink-0 xl:shrink overflow-hidden rounded-xl cursor-pointer transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 snap-center"
               >
                 {/* Background Image */}
                 <div className="absolute inset-0">

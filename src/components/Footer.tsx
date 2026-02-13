@@ -2,7 +2,7 @@ import { Plane, Linkedin, Twitter, Facebook, Instagram, Send } from "lucide-reac
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import { useState } from "react";
-import logo from "../assets/VIOM AIR LOGO/VIOM AIR.png";
+import logo from "../assets/images/VIOM AIR.png";
 
 export default function Footer() {
   const [email, setEmail] = useState("");

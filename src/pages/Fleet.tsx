@@ -5,9 +5,10 @@ import SignInModal from "@/components/SignInModal";
 import RegisterModal from "@/components/RegisterModal";
 import { toast } from "sonner";
 import { Plane, Info, Package, Maximize2, Weight, DoorOpen } from "lucide-react";
-import viomHero from "../assets/VIOM AIR LOGO/ViomHero.png";
-import viomAir320 from "../assets/VIOM AIR LOGO/viomair320.png";
-import boeingImg from "../assets/VIOM AIR LOGO/boeing.jpg";
+import viomHero from "../assets/images/ViomHero.png";
+import viomAir320 from "../assets/images/viomair320.png";
+import boeingImg from "../assets/images/boeing.jpg";
+import fleetImg from "../assets/images/fleet.png";
 
 const fleetData = [
     {
@@ -85,7 +86,7 @@ export default function Fleet() {
                 <section className="relative h-[30vh] sm:h-[40vh] lg:h-[60vh] flex items-center justify-center overflow-hidden">
                     <div className="absolute inset-0">
                         <img
-                            src={boeingImg}
+                            src={fleetImg}
                             alt="Fleet Background"
                             className="w-full h-full object-cover"
                         />

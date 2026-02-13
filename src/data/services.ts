@@ -1,6 +1,6 @@
 import { Plane, TriangleAlert, Package, Zap } from "lucide-react";
-import tempImage from "@/assets/VIOM AIR LOGO/temperature.jpg";
-import generalImage from "@/assets/VIOM AIR LOGO/general.jpg";
+import tempImage from "@/assets/images/temperature.jpg";
+import generalImage from "@/assets/images/general.jpg";
 
 export interface Service {
     id: string;

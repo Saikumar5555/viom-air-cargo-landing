@@ -1,4 +1,4 @@
-import heroImage from "@/assets/VIOM AIR LOGO/viomAir.jpg";
+import heroImage from "@/assets/images/final.png";
 
 interface HeroSectionProps {
   onBookNow: () => void;
@@ -19,7 +19,7 @@ export default function HeroSection({ onBookNow, onTrack }: HeroSectionProps) {
 
       <div className="relative z-10 mx-auto w-full max-w-[94%] px-4 lg:px-8 mt-10 lg:mt-0">
         <div className="max-w-2xl xl:max-w-4xl animate-fade-up">
-          <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.25em] text-gold mb-1 lg:mb-4">
+          <p className="bg-white px-3 py-1 rounded w-fit text-[10px] sm:text-xs font-semibold uppercase tracking-[0.25em] text-gold mb-1 lg:mb-4">
             Global Air Cargo Solutions
           </p>
           <h1 className="text-lg sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary-foreground leading-tight mb-2 lg:mb-6">

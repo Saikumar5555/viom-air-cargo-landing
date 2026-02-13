@@ -14,7 +14,7 @@ const rightLinks = [
   { name: "Support", href: "/support" },
 ];
 
-import logo from "../assets/VIOM AIR LOGO/VIOM AIR.png";
+import logo from "../assets/images/VIOM AIR.png";
 
 interface NavbarProps {
   onSignInClick: () => void;
