@@ -7,7 +7,7 @@ import { toast } from "sonner";
 import { Plane, Globe, Shield, Clock, Thermometer, ShieldCheck, Zap, Activity, CheckCircle2, Award, Briefcase, BarChart3 } from "lucide-react";
 import viomHero from "../assets/images/image.jpg";
 import viomAboutHero from "../assets/images/viomAir.png";
-import viomAboutImage from "../assets/backup_images/imageabout.png";
+import viomAboutImage from "@/assets/images/imageabout.png";
 
 export default function AboutUs() {
     const [signInOpen, setSignInOpen] = useState(false);

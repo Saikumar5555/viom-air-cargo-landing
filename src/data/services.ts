@@ -1,6 +1,7 @@
 import { Plane, TriangleAlert, Package, Zap } from "lucide-react";
 import tempImage from "@/assets/images/temperature.jpg";
 import generalImage from "@/assets/images/general.jpg";
+import specialImage from "@/assets/images/fleet.png";
 
 export interface Service {
     id: string;
@@ -61,7 +62,7 @@ export const services: Service[] = [
         id: "special",
         name: "Special Cargo",
         icon: Package,
-        image: generalImage,
+        image: specialImage,
         tagline: "Customized Solutions for Unique Shipments",
         description: "Tailored handling for oversized, valuable, and sensitive cargo requiring special care.",
         longDescription: "Not all cargo fits into standard shipping containers. Our Special Cargo service provides customized solutions for shipments that require extra care, special handling, or unique logistics arrangements. From live animals to priceless artwork, from automotive manufacturing to heavy machinery, we design bespoke shipping solutions that meet your specific requirements.",
