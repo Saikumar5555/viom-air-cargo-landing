@@ -127,57 +127,57 @@ export default function Support() {
 
                     {/* Sidebar Navigation */}
                     <div className="lg:col-span-3">
-                        <div className="flex lg:flex-col gap-2 overflow-x-auto pb-4 lg:pb-0 lg:sticky lg:top-32 lg:space-y-2 scrollbar-hide">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-col gap-3 lg:gap-2 lg:sticky lg:top-32 lg:space-y-2">
                             <button
                                 onClick={() => handleSectionChange("faq")}
-                                className={`flex-shrink-0 lg:w-full flex items-center justify-between px-4 py-3 lg:px-6 lg:py-4 rounded-xl transition-all duration-300 ${activeSection === "faq" ? "bg-navy text-white shadow-lg" : "hover:bg-muted text-foreground"
+                                className={`w-full flex items-center justify-between px-4 py-4 lg:px-6 lg:py-4 rounded-xl transition-all duration-300 ${activeSection === "faq" ? "bg-navy text-white shadow-lg" : "hover:bg-muted text-foreground bg-card border border-border/50 lg:border-transparent"
                                     }`}
                             >
                                 <div className="flex items-center gap-3">
                                     <MessageCircle className="h-5 w-5" />
-                                    <span className="font-semibold text-sm lg:text-base whitespace-nowrap">FAQs</span>
+                                    <span className="font-semibold text-sm lg:text-base">FAQs</span>
                                 </div>
                                 <ChevronRight className={`h-4 w-4 hidden lg:block ${activeSection === "faq" ? "opacity-100" : "opacity-0"}`} />
                             </button>
 
                             <button
                                 onClick={() => handleSectionChange("claims")}
-                                className={`flex-shrink-0 lg:w-full flex items-center justify-between px-4 py-3 lg:px-6 lg:py-4 rounded-xl transition-all duration-300 ${activeSection === "claims" ? "bg-navy text-white shadow-lg" : "hover:bg-muted text-foreground"
+                                className={`w-full flex items-center justify-between px-4 py-4 lg:px-6 lg:py-4 rounded-xl transition-all duration-300 ${activeSection === "claims" ? "bg-navy text-white shadow-lg" : "hover:bg-muted text-foreground bg-card border border-border/50 lg:border-transparent"
                                     }`}
                             >
                                 <div className="flex items-center gap-3">
                                     <FileWarning className="h-5 w-5" />
-                                    <span className="font-semibold text-sm lg:text-base whitespace-nowrap">Cargo Claims</span>
+                                    <span className="font-semibold text-sm lg:text-base">Cargo Claims</span>
                                 </div>
                                 <ChevronRight className={`h-4 w-4 hidden lg:block ${activeSection === "claims" ? "opacity-100" : "opacity-0"}`} />
                             </button>
 
                             <button
                                 onClick={() => handleSectionChange("contact")}
-                                className={`flex-shrink-0 lg:w-full flex items-center justify-between px-4 py-3 lg:px-6 lg:py-4 rounded-xl transition-all duration-300 ${activeSection === "contact" ? "bg-navy text-white shadow-lg" : "hover:bg-muted text-foreground"
+                                className={`w-full flex items-center justify-between px-4 py-4 lg:px-6 lg:py-4 rounded-xl transition-all duration-300 ${activeSection === "contact" ? "bg-navy text-white shadow-lg" : "hover:bg-muted text-foreground bg-card border border-border/50 lg:border-transparent"
                                     }`}
                             >
                                 <div className="flex items-center gap-3">
                                     <Phone className="h-5 w-5" />
-                                    <span className="font-semibold text-sm lg:text-base whitespace-nowrap">Contact Us</span>
+                                    <span className="font-semibold text-sm lg:text-base">Contact Us</span>
                                 </div>
                                 <ChevronRight className={`h-4 w-4 hidden lg:block ${activeSection === "contact" ? "opacity-100" : "opacity-0"}`} />
                             </button>
 
                             <button
                                 onClick={() => handleSectionChange("locations")}
-                                className={`flex-shrink-0 lg:w-full flex items-center justify-between px-4 py-3 lg:px-6 lg:py-4 rounded-xl transition-all duration-300 ${activeSection === "locations" ? "bg-navy text-white shadow-lg" : "hover:bg-muted text-foreground"
+                                className={`w-full flex items-center justify-between px-4 py-4 lg:px-6 lg:py-4 rounded-xl transition-all duration-300 ${activeSection === "locations" ? "bg-navy text-white shadow-lg" : "hover:bg-muted text-foreground bg-card border border-border/50 lg:border-transparent"
                                     }`}
                             >
                                 <div className="flex items-center gap-3">
                                     <MapPin className="h-5 w-5" />
-                                    <span className="font-semibold text-sm lg:text-base whitespace-nowrap">Global Offices</span>
+                                    <span className="font-semibold text-sm lg:text-base">Global Offices</span>
                                 </div>
                                 <ChevronRight className={`h-4 w-4 hidden lg:block ${activeSection === "locations" ? "opacity-100" : "opacity-0"}`} />
                             </button>
 
                             {/* Support Info Card */}
-                            <div className="hidden lg:block mt-8 p-6 rounded-2xl bg-gold/10 border border-gold/20">
+                            <div className="col-span-1 sm:col-span-2 lg:col-span-1 mt-4 lg:mt-8 p-6 rounded-2xl bg-gold/10 border border-gold/20">
                                 <ShieldCheck className="h-8 w-8 text-gold mb-4" />
                                 <h4 className="font-bold text-navy mb-2">Live Support</h4>
                                 <p className="text-sm text-navy/70 mb-4">Urgent shipments? Call our 24/7 hotline for immediate assistance.</p>
@@ -193,7 +193,7 @@ export default function Support() {
                         {activeSection === "faq" && (
                             <div className="animate-fade-up">
                                 <div className="mb-10">
-                                    <h2 className="text-3xl font-bold text-navy mb-4">Frequently Asked Questions</h2>
+                                    <h2 className="text-2xl md:text-3xl font-bold text-navy mb-4">Frequently Asked Questions</h2>
                                     <div className="relative max-w-xl">
                                         <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                                         <input
@@ -224,13 +224,13 @@ export default function Support() {
                                                         <div key={i} className="group rounded-2xl border border-border hover:border-gold/30 bg-card overflow-hidden transition-all duration-300">
                                                             <button
                                                                 onClick={() => setExpandedFaq(isExpanded ? null : id)}
-                                                                className="w-full text-left px-4 py-4 sm:px-8 sm:py-6 flex items-center justify-between"
+                                                                className="w-full text-left px-5 py-4 sm:px-8 sm:py-6 flex items-center justify-between"
                                                             >
                                                                 <span className="font-semibold text-navy group-hover:text-gold transition-colors">{faq.q}</span>
                                                                 <ChevronDown className={`h-5 w-5 text-muted-foreground transition-transform duration-300 ${isExpanded ? "rotate-180" : ""}`} />
                                                             </button>
                                                             {isExpanded && (
-                                                                <div className="px-4 pb-4 sm:px-8 sm:pb-6 text-muted-foreground leading-relaxed animate-fade-up">
+                                                                <div className="px-5 pb-5 sm:px-8 sm:pb-6 text-muted-foreground leading-relaxed animate-fade-up">
                                                                     {faq.a}
                                                                 </div>
                                                             )}
@@ -248,7 +248,7 @@ export default function Support() {
                         {activeSection === "claims" && (
                             <div className="animate-fade-up">
                                 <div className="mb-12">
-                                    <h2 className="text-3xl font-bold text-navy mb-4">Cargo Claims Portal</h2>
+                                    <h2 className="text-2xl md:text-3xl font-bold text-navy mb-4">Cargo Claims Portal</h2>
                                     <p className="text-muted-foreground max-w-2xl">
                                         If your shipment is damaged, lost, or delayed, please submit a formal claim below.
                                         Ensure you have your Air Waybill and supporting documentation ready.
@@ -287,7 +287,7 @@ export default function Support() {
                                     </form>
 
                                     <div className="space-y-8">
-                                        <div className="p-8 rounded-3xl bg-navy text-white relative overflow-hidden">
+                                        <div className="p-6 md:p-8 rounded-3xl bg-navy text-white relative overflow-hidden">
                                             <div className="absolute top-0 right-0 p-4 opacity-10">
                                                 <Clock className="h-24 w-24" />
                                             </div>
@@ -317,7 +317,7 @@ export default function Support() {
                                             </ul>
                                         </div>
 
-                                        <div className="p-8 rounded-3xl border border-gold/30 bg-gold/5">
+                                        <div className="p-6 md:p-8 rounded-3xl border border-gold/30 bg-gold/5">
                                             <h4 className="font-bold text-navy mb-4 flex items-center gap-2">
                                                 <CheckCircle2 className="h-5 w-5 text-gold" />
                                                 Required Documents
@@ -339,7 +339,7 @@ export default function Support() {
                         {activeSection === "contact" && (
                             <div className="animate-fade-up">
                                 <div className="mb-12">
-                                    <h2 className="text-3xl font-bold text-navy mb-4">Get in Touch</h2>
+                                    <h2 className="text-2xl md:text-3xl font-bold text-navy mb-4">Get in Touch</h2>
                                     <p className="text-muted-foreground max-w-2xl">
                                         Our team is here to help with bookings, schedules, and general inquiries.
                                         Complete the form below and the relevant department will contact you.
@@ -375,7 +375,7 @@ export default function Support() {
                                     </form>
 
                                     <div className="space-y-6">
-                                        <div className="group p-8 rounded-3xl border border-border hover:border-gold/30 transition-all duration-300">
+                                        <div className="group p-6 md:p-8 rounded-3xl border border-border hover:border-gold/30 transition-all duration-300">
                                             <div className="h-12 w-12 rounded-2xl bg-muted flex items-center justify-center mb-6 group-hover:bg-gold/10 group-hover:text-gold transition-colors">
                                                 <Mail className="h-6 w-6" />
                                             </div>
@@ -384,7 +384,7 @@ export default function Support() {
                                             <p className="text-xl font-bold text-navy">cargo@viomair.com</p>
                                         </div>
 
-                                        <div className="group p-8 rounded-3xl border border-border hover:border-gold/30 transition-all duration-300">
+                                        <div className="group p-6 md:p-8 rounded-3xl border border-border hover:border-gold/30 transition-all duration-300">
                                             <div className="h-12 w-12 rounded-2xl bg-muted flex items-center justify-center mb-6 group-hover:bg-gold/10 group-hover:text-gold transition-colors">
                                                 <Globe2 className="h-6 w-6" />
                                             </div>
@@ -401,7 +401,7 @@ export default function Support() {
                         {activeSection === "locations" && (
                             <div className="animate-fade-up">
                                 <div className="mb-12">
-                                    <h2 className="text-3xl font-bold text-navy mb-4">Our Presence</h2>
+                                    <h2 className="text-2xl md:text-3xl font-bold text-navy mb-4">Our Presence</h2>
                                     <p className="text-muted-foreground max-w-2xl">
                                         Strategic hubs and local offices across India to ensure seamless cargo operations
                                         and expert local support.
@@ -410,7 +410,7 @@ export default function Support() {
 
                                 <div className="grid md:grid-cols-2 gap-8">
                                     {offices.map((office, i) => (
-                                        <div key={i} className="group p-8 rounded-3xl border border-border hover:border-gold/30 bg-card transition-all duration-300">
+                                        <div key={i} className="group p-6 md:p-8 rounded-3xl border border-border hover:border-gold/30 bg-card transition-all duration-300">
                                             <div className="flex justify-between items-start mb-6">
                                                 <h3 className="text-2xl font-bold text-navy">{office.city}</h3>
                                                 <div className="h-10 w-10 rounded-xl bg-muted flex items-center justify-center group-hover:bg-gold/10 group-hover:text-gold transition-colors">

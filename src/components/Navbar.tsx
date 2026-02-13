@@ -73,7 +73,17 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
       <div className="max-w-[94%] mx-auto flex items-center justify-between h-16 lg:h-20 px-4 lg:px-8 py-3 relative">
         {/* Logo - Left aligned */}
         <div className="flex-shrink-0 z-50">
-          <Link to="/" className="flex items-center gap-2 group" onClick={() => setMobileOpen(false)}>
+          <Link
+            to="/"
+            className="flex items-center gap-2 group"
+            onClick={(e) => {
+              setMobileOpen(false);
+              if (location.pathname === "/") {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
+          >
             <img
               src={logo}
               alt="VIOM AIR Cargo"

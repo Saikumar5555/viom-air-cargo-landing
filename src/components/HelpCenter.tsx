@@ -48,7 +48,8 @@ export default function HelpCenter() {
             <button
               key={card.id}
               onClick={() => navigate(`/support/${card.id}`)}
-              className="group relative overflow-hidden rounded-none bg-card border border-border shadow-card hover:shadow-card-hover transition-all duration-300 card-lift h-[80px] sm:h-[100px] lg:h-[120px] w-[140px] sm:w-[180px] lg:w-[220px]"
+              className="group relative overflow-hidden rounded-2xl bg-card border border-border shadow-card hover:shadow-card-hover transition-all duration-300 card-lift h-[80px] sm:h-[100px] lg:h-[120px] w-[140px] sm:w-[180px] lg:w-[220px]"
+
             >
               {/* Background Image */}
               <div

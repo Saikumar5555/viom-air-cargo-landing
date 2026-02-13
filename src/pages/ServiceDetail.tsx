@@ -147,7 +147,7 @@ export default function ServiceDetail() {
                                             className="w-full py-4 rounded-xl text-white font-bold text-sm uppercase tracking-wider hover:opacity-90 transition-all shadow-lg shadow-primary/25"
                                             style={{ backgroundColor: '#b38b77' }}
                                         >
-                                            Get a Quote
+                                            Book
                                         </button>
                                         <p className="text-center text-xs text-muted-foreground mt-4">
                                             Custom solutions for your needs
