@@ -20,7 +20,5 @@
     "skipLibCheck": true,
     "allowJs": true,
     "noUnusedLocals": false,
-    "strictNullChecks": false
-  },
-  "extends": "expo/tsconfig.base"
+  }
 }
