@@ -6,8 +6,8 @@ import RegisterModal from "@/components/RegisterModal";
 import { toast } from "sonner";
 import { Plane, Globe, Shield, Clock, Thermometer, ShieldCheck, Zap, Activity, CheckCircle2, Award, Briefcase, BarChart3 } from "lucide-react";
 import viomHero from "../assets/images/image.jpg";
-import viomAboutHero from "@/assets/images/abouthero.png";
-import viomAboutImage from "@/assets/images/about2.png";
+import viomAboutHero from "@/assets/images/about_us_new.png";
+import viomAboutImage from "@/assets/images/fleet.png";
 
 export default function AboutUs() {
     const [signInOpen, setSignInOpen] = useState(false);
@@ -40,7 +40,7 @@ export default function AboutUs() {
             <main>
                 {/* Hero Section */}
                 {/* Hero Section */}
-                <section className="relative h-[50dvh] sm:h-[80dvh] md:h-[90dvh] lg:h-[100dvh] min-h-[400px] flex items-center overflow-hidden text-white">
+                <section className="relative h-[50dvh] sm:h-[80dvh] md:h-[90dvh] lg:h-[100dvh] min-h-[400px] flex items-end overflow-hidden pb-16 sm:pb-20 lg:pb-32 text-white">
                     <div className="absolute inset-0 z-0">
                         <img
                             src={viomAboutHero}

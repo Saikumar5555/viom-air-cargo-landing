@@ -1,4 +1,5 @@
 import { Plane, HeartPulse, Leaf, Package } from "lucide-react";
+import pharmaImage from "@/assets/images/pharma.png";
 
 export interface Capability {
     id: string;
@@ -20,7 +21,7 @@ export const capabilities: Capability[] = [
         id: "pharmaceutical",
         name: "Pharmaceutical",
         icon: HeartPulse,
-        image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=2030&auto=format&fit=crop",
+        image: pharmaImage,
         tagline: "Life-Saving Logistics",
         description: "Specialized transport for pharmaceuticals, medical devices, and other life-science products.",
         longDescription: "Pharmaceutical logistics requires precision and care. We ensure the integrity of your medical shipments through temperature-controlled environments and strict adherence to healthcare regulations. From clinical trials to hospital supplies, we prioritize the safety and efficacy of every item.",

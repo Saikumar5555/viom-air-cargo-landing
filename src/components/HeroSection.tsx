@@ -7,7 +7,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onBookNow, onGetQuote }: HeroSectionProps) {
   return (
-    <section className="relative h-[50dvh] sm:h-[80dvh] md:h-[90dvh] lg:h-[100dvh] min-h-[400px] flex items-end sm:items-center overflow-hidden pb-16 sm:pb-0 bg-[hsl(var(--navy))]">
+    <section className="relative h-[50dvh] sm:h-[80dvh] md:h-[90dvh] lg:h-[100dvh] min-h-[400px] flex items-end overflow-hidden pb-16 sm:pb-20 lg:pb-32 bg-[hsl(var(--navy))]">
       {/* Background image */}
       <img
         src={heroImage}

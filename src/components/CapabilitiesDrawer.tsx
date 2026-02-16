@@ -3,7 +3,7 @@ import { X, ArrowRight, Package, Thermometer, ShieldCheck, Truck, Plane, Leaf } 
 import { Link, useNavigate } from "react-router-dom";
 
 // Import images
-import pharmaImg from "../assets/images/temperature.jpg";
+import pharmaImg from "../assets/images/pharma.png";
 import freshImg from "../assets/images/fresh.jpg";
 import secureImg from "../assets/images/claims.png"; // Placeholder
 import generalImg from "../assets/images/general.jpg";
