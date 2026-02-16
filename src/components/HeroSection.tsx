@@ -1,4 +1,4 @@
-import heroImage from "@/assets/images/viomcargo.png";
+import heroImage from "@/assets/images/heromain.png";
 
 interface HeroSectionProps {
   onBookNow: () => void;
