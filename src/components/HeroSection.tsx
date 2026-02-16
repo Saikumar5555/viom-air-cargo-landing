@@ -20,7 +20,7 @@ export default function HeroSection({ onBookNow, onGetQuote }: HeroSectionProps)
         <div className="absolute inset-0 gradient-hero-overlay" />
       </div>
 
-      <div className="relative z-10 w-full px-4 py-12 md:py-0 md:absolute md:bottom-0 md:pb-20 lg:pb-32">
+      <div className="relative z-10 w-full px-4 py-12 md:py-0 md:absolute md:bottom-0 md:pb-16 lg:pb-28">
         <div className="mx-auto w-full max-w-[94%] lg:px-8">
           <div className="max-w-2xl xl:max-w-4xl animate-fade-up">
 
