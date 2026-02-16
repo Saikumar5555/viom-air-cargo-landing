@@ -12,12 +12,12 @@ import exquisiteImg from "../assets/images/image.jpg"; // Placeholder
 
 const capabilitiesData = [
     {
-        id: "healthcare",
-        name: "Health Care",
+        id: "pharmaceutical",
+        name: "Pharmaceutical",
         description: "Temperature-controlled solutions for pharmaceutical and life sciences cargo, ensuring integrity from origin to destination.",
         image: pharmaImg,
         icon: Thermometer,
-        href: "/capability/healthcare"
+        href: "/capability/pharmaceutical"
     },
     {
         id: "charter",

@@ -25,7 +25,7 @@ export default function ServicesSection() {
                                     }`}>
                                     {/* Image */}
                                     <div className={`${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
-                                        <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] border border-white/10">
+                                        <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 aspect-[16/9]">
                                             <img
                                                 src={service.image}
                                                 alt={service.name}

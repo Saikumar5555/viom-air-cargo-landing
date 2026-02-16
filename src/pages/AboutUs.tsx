@@ -6,8 +6,8 @@ import RegisterModal from "@/components/RegisterModal";
 import { toast } from "sonner";
 import { Plane, Globe, Shield, Clock, Thermometer, ShieldCheck, Zap, Activity, CheckCircle2, Award, Briefcase, BarChart3 } from "lucide-react";
 import viomHero from "../assets/images/image.jpg";
-import viomAboutHero from "../assets/images/viomAir.png";
-import viomAboutImage from "@/assets/images/imageabout.png";
+import viomAboutHero from "@/assets/images/abouthero.png";
+import viomAboutImage from "@/assets/images/about2.png";
 
 export default function AboutUs() {
     const [signInOpen, setSignInOpen] = useState(false);

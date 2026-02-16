@@ -65,9 +65,8 @@ export default function HelpCenter() {
 
               {/* Content */}
               <div className="relative p-2 h-full flex flex-col items-center justify-end text-center pb-2">
-                <h3 className="text-xs md:text-sm font-bold text-white mb-1 drop-shadow-2xl">{card.title}</h3>
-                <div className="flex items-center gap-1 text-white/90 group-hover:text-white transition-colors">
-                  <span className="text-[10px] md:text-xs font-medium">Explore</span>
+                <div className="flex items-center gap-1 text-white group-hover:text-white transition-colors">
+                  <h3 className="text-xs md:text-sm font-bold mb-0 drop-shadow-2xl">{card.title}</h3>
                   <ChevronRight className="h-3 w-3 md:h-4 md:w-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>

@@ -1,4 +1,4 @@
-import heroImage from "@/assets/images/final.png";
+import heroImage from "@/assets/images/viomcargo.png";
 
 interface HeroSectionProps {
   onBookNow: () => void;
@@ -12,7 +12,7 @@ export default function HeroSection({ onBookNow, onGetQuote }: HeroSectionProps)
       <img
         src={heroImage}
         alt="VIOM AIR cargo aircraft flying above clouds"
-        className="absolute inset-0 w-full h-full object-cover object-right md:object-[60%_20%] lg:object-[75%_center] 2xl:object-center opacity-70"
+        className="absolute inset-0 w-full h-full object-cover object-right md:object-[60%_20%] lg:object-[75%_center] 2xl:object-center opacity-90"
         fetchPriority="high"
       />
       {/* Overlay */}

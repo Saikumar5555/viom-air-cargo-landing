@@ -17,13 +17,13 @@ export interface Capability {
 
 export const capabilities: Capability[] = [
     {
-        id: "healthcare",
-        name: "Health Care",
+        id: "pharmaceutical",
+        name: "Pharmaceutical",
         icon: HeartPulse,
         image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=2030&auto=format&fit=crop",
         tagline: "Life-Saving Logistics",
-        description: "Specialized transport for pharmaceuticals, medical devices, and healthcare products.",
-        longDescription: "Healthcare logistics requires precision and care. We ensure the integrity of your medical shipments through temperature-controlled environments and strict adherence to healthcare regulations. From clinical trials to hospital supplies, we prioritize the safety and efficacy of every item.",
+        description: "Specialized transport for pharmaceuticals, medical devices, and other life-science products.",
+        longDescription: "Pharmaceutical logistics requires precision and care. We ensure the integrity of your medical shipments through temperature-controlled environments and strict adherence to healthcare regulations. From clinical trials to hospital supplies, we prioritize the safety and efficacy of every item.",
         features: ["Temperature control", "GDP compliant", "Priority handling", "Real-time monitoring", "Specialized packaging"],
         specifications: [
             { label: "Temp Range", value: "+2°C to +8°C / +15°C to +25°C" },

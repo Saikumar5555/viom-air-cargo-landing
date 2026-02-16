@@ -24,7 +24,7 @@ interface NavbarProps {
 
 const products = [
   { name: "Charter", href: "#products" },
-  { name: "Health Care", href: "#products" },
+  { name: "Pharmaceutical", href: "#products" },
   { name: "Air Freight", href: "#products" },
   { name: "Fresh", href: "#products" },
 ];

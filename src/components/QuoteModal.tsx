@@ -78,7 +78,7 @@ export default function QuoteModal({ open, onClose }: QuoteModalProps) {
                             className="w-full px-4 py-2.5 rounded-lg border border-border bg-background text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50"
                         >
                             <option value="Charter">Charter</option>
-                            <option value="Health Care">Health Care</option>
+                            <option value="Pharmaceutical">Pharmaceutical</option>
                             <option value="Air Freight">Air Freight</option>
                             <option value="Fresh">Fresh</option>
                         </select>

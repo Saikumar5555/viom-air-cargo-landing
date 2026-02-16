@@ -1,7 +1,7 @@
 import { Plane, TriangleAlert, Package, Zap } from "lucide-react";
 import tempImage from "@/assets/images/temperature.jpg";
 import generalImage from "@/assets/images/general.jpg";
-import specialImage from "@/assets/images/fleet.png";
+import specialImage from "@/assets/images/specialcargo.png";
 
 export interface Service {
     id: string;
@@ -132,7 +132,7 @@ export const services: Service[] = [
             "Dairies and meat products",
             "Life science samples",
             "High-end chocolates and wines",
-            "Healthcare supplies"
+            "Pharmaceutical supplies"
         ],
         category: "Premium Services"
     }
