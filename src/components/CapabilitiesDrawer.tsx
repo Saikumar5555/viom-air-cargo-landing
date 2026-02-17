@@ -6,10 +6,9 @@ import { services } from "../data/services";
 
 // Import images
 import pharmaImg from "../assets/images/pharma.png";
-import freshImg from "../assets/images/fresh.jpg";
+
 import secureImg from "../assets/images/claims.png"; // Placeholder
-import generalImg from "../assets/images/general.jpg";
-import driveImg from "../assets/images/ViomHero.png"; // Charter image
+
 import exquisiteImg from "../assets/images/image.jpg"; // Placeholder
 
 const capabilitiesData = [
@@ -25,7 +24,7 @@ const capabilitiesData = [
         id: "charter",
         name: "Charter",
         description: "Tailored air cargo charter solutions providing flexibility and capacity for urgent or specialized shipments.",
-        image: driveImg,
+        image: "https://images.unsplash.com/photo-1474302770737-173ee21bab63?q=80&w=2074&auto=format&fit=crop",
         icon: Plane,
         href: "/capability/charter"
     },
@@ -33,7 +32,7 @@ const capabilitiesData = [
         id: "airfreight",
         name: "Air Freight",
         description: "Reliable and efficient general air freight services connecting global markets with speed and precision.",
-        image: generalImg,
+        image: "https://images.unsplash.com/photo-1542296332-2e4473faf563?q=80&w=2070&auto=format&fit=crop",
         icon: Package,
         href: "/capability/airfreight"
     },
@@ -41,7 +40,7 @@ const capabilitiesData = [
         id: "fresh",
         name: "Fresh",
         description: "Expert handling of perishables to preserve freshness and quality throughout the supply chain.",
-        image: freshImg,
+        image: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?q=80&w=2070&auto=format&fit=crop",
         icon: Leaf,
         href: "/capability/fresh"
     }
