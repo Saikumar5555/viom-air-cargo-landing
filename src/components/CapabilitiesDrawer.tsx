@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { X, ArrowRight, Package, Thermometer, ShieldCheck, Truck, Plane, Leaf } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 
+import { services } from "../data/services";
+
 // Import images
 import pharmaImg from "../assets/images/pharma.png";
 import freshImg from "../assets/images/fresh.jpg";
@@ -45,6 +47,17 @@ const capabilitiesData = [
     }
 ];
 
+const serviceItems = services.map(s => ({
+    id: s.id,
+    name: s.name,
+    description: s.description,
+    image: s.image,
+    icon: s.icon,
+    href: `/service/${s.id}`
+}));
+
+const allItems = [...capabilitiesData, ...serviceItems];
+
 interface CapabilitiesDrawerProps {
     isOpen: boolean;
     onClose: () => void;
@@ -52,7 +65,7 @@ interface CapabilitiesDrawerProps {
 
 export default function CapabilitiesDrawer({ isOpen, onClose }: CapabilitiesDrawerProps) {
     const navigate = useNavigate();
-    const [activeProduct, setActiveProduct] = useState(capabilitiesData[0]);
+    const [activeProduct, setActiveProduct] = useState(allItems[0]);
     const [isClosing, setIsClosing] = useState(false);
 
     // Handle escape key
@@ -92,9 +105,9 @@ export default function CapabilitiesDrawer({ isOpen, onClose }: CapabilitiesDraw
 
                 {/* Left Side: Product List */}
                 <div className="w-full md:w-1/2 border-r border-border bg-gray-50/50 flex flex-col pt-8 pb-8 px-6 overflow-y-auto">
-                    <h2 className="text-xl font-bold text-navy mb-6">Capabilities</h2>
+                    <h2 className="text-xl font-bold text-navy mb-6">Our Services</h2>
                     <div className="space-y-2">
-                        {capabilitiesData.map((product) => (
+                        {allItems.map((product) => (
                             <button
                                 key={product.id}
                                 onMouseEnter={() => setActiveProduct(product)}

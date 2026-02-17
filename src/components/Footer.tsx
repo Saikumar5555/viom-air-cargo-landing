@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import { useState } from "react";
 import logo from "@/assets/images/new.svg";
+import TrackShipmentModal from "./TrackShipmentModal";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
+  const [trackModalOpen, setTrackModalOpen] = useState(false);
 
   const handleNewsletter = (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,17 +43,26 @@ export default function Footer() {
                 { name: "About Us", path: "/about" },
                 { name: "Help Centre", path: "/support" },
                 { name: "FAQ", path: "/support/faq" },
-                { name: "Track Shipment", path: "#track" },
+                { name: "Track Shipment", path: "#track", action: () => setTrackModalOpen(true) },
                 { name: "Find Local Office", path: "/support/locations" },
                 { name: "Contact Us", path: "/support/contact" },
               ].map((link) => (
                 <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="text-sm text-white/60 hover:text-gold transition-colors"
-                  >
-                    {link.name}
-                  </Link>
+                  {link.action ? (
+                    <button
+                      onClick={link.action}
+                      className="text-sm text-white/60 hover:text-gold transition-colors text-left"
+                    >
+                      {link.name}
+                    </button>
+                  ) : (
+                    <Link
+                      to={link.path}
+                      className="text-sm text-white/60 hover:text-gold transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -97,6 +108,10 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <TrackShipmentModal
+        open={trackModalOpen}
+        onClose={() => setTrackModalOpen(false)}
+      />
     </footer>
   );
 }

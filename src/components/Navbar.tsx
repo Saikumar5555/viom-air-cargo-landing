@@ -115,6 +115,14 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
             Services <ChevronDown className="h-4 w-4" />
           </button>
 
+          <a
+            href="/#destinations"
+            onClick={(e) => handleLinkClick(e, "#destinations")}
+            className="px-4 py-2 text-sm font-medium rounded-lg transition-colors text-white hover:text-gold hover:bg-white/5"
+          >
+            Destinations
+          </a>
+
           {/* <a
             href="/fleet"
             onClick={(e) => handleLinkClick(e, "/fleet")}
@@ -240,6 +248,17 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
                   ))}
                 </div>
               </div>
+
+              <a
+                href="/#destinations"
+                onClick={(e) => {
+                  handleLinkClick(e, "#destinations");
+                  setMobileOpen(false);
+                }}
+                className="block px-4 py-3 text-base font-medium text-white rounded-lg hover:bg-white/5 transition-colors"
+              >
+                Destinations
+              </a>
             </div>
 
             {/* Then Fleet & Remaining */}

@@ -92,10 +92,17 @@ export default function DestinationsSection() {
     const currentDest = destinations[currentIndex];
 
     return (
-        <section className="pt-6 pb-10 lg:pt-8 lg:pb-14 bg-[#152238] overflow-hidden relative">
+        <section id="destinations" className="pt-6 pb-10 lg:pt-8 lg:pb-14 bg-[#152238] overflow-hidden relative">
             <div className="mx-auto w-full max-w-[94%] px-4 lg:px-8">
-                {/* Rounded Slider Card - Rounded removed for sharp edges */}
-                <div className="relative h-[400px] md:h-[500px] lg:h-[550px] rounded-none overflow-hidden shadow-2xl bg-black group-nav">
+                {/* Section Heading */}
+                <div className="mb-8">
+                    <p className="text-3xl md:text-4xl font-extrabold uppercase logo-gradient-text w-fit">
+                        DESTINATIONS
+                    </p>
+                </div>
+
+                {/* Rounded Slider Card */}
+                <div className="relative h-[400px] md:h-[500px] lg:h-[550px] rounded-3xl overflow-hidden shadow-2xl bg-black group-nav">
 
                     {/* Background Images */}
                     {destinations.map((dest, index) => (
@@ -127,7 +134,7 @@ export default function DestinationsSection() {
 
                             <button
                                 onClick={() => navigate("/schedule")}
-                                className="px-8 py-2.5 md:px-10 md:py-3 rounded-full border border-white/40 text-white font-medium text-xs md:text-sm transition-all hover:bg-white hover:text-black hover:border-white"
+                                className="px-8 py-2.5 md:px-10 md:py-3 rounded-2xl border border-white/40 text-white font-medium text-xs md:text-sm transition-all hover:bg-white hover:text-black hover:border-white"
                             >
                                 View Schedule
                             </button>

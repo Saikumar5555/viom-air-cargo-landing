@@ -20,7 +20,7 @@ export default function HeroSection({ onBookNow, onGetQuote }: HeroSectionProps)
         <div className="absolute inset-0 gradient-hero-overlay" />
       </div>
 
-      <div className="relative z-10 w-full px-4 py-12 md:py-0 md:absolute md:bottom-0 md:pb-16 lg:pb-28">
+      <div className="relative z-10 w-full px-4 py-12 md:py-0 md:absolute md:bottom-0 md:pb-10 lg:pb-20">
         <div className="mx-auto w-full max-w-[94%] lg:px-8">
           <div className="max-w-2xl xl:max-w-4xl animate-fade-up">
 
@@ -28,10 +28,10 @@ export default function HeroSection({ onBookNow, onGetQuote }: HeroSectionProps)
               Delivering the World,
               <span className="logo-gradient-text block w-fit mt-1 sm:mt-2">Mile by Mile</span>
             </h1>
-            <p className="text-[11px] sm:text-base lg:text-lg text-primary-foreground/80 mb-5 lg:mb-10 max-w-lg lg:max-w-2xl leading-relaxed line-clamp-3 sm:line-clamp-none">
+            <p className="text-[11px] sm:text-base lg:text-lg text-primary-foreground/80 mb-5 lg:mb-10 max-w-lg lg:max-w-2xl leading-relaxed line-clamp-3 sm:line-clamp-none animate-fade-up-delay-1">
               VIOM AIR provides ultra-secure, white-glove cargo logistics for high-value shipments — from cutting-edge pharmaceuticals to priceless luxury goods.
             </p>
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 w-full sm:w-auto animate-fade-up-delay-2">
               <button
                 onClick={onBookNow}
                 className="px-5 py-2.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider rounded-lg logo-gradient-bg text-[#1a2942] shadow-lg hover:opacity-90 transition-all w-full sm:w-auto border-2 border-transparent hover:border-[#1b2a47]"

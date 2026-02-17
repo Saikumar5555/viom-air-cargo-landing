@@ -1,79 +1,66 @@
-import { useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { capabilities } from "@/data/capabilities";
 import { Link } from "react-router-dom";
+import { capabilities } from "@/data/capabilities";
+import { ArrowRight } from "lucide-react";
 
 export default function CapabilitiesSection() {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollContainerRef.current) {
-      const scrollAmount = scrollContainerRef.current.clientWidth / 2; // Scroll half a container at a time
-      scrollContainerRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth',
-      });
-    }
-  };
-
   return (
-    <section id="products" className="pt-10 pb-2 lg:pt-12 lg:pb-4 bg-navy overflow-hidden relative">
-      <div className="mx-auto w-full max-w-[94%] px-4 lg:px-8 mb-2 lg:mb-4 flex justify-between items-end">
-        <div>
-          <p className="text-xl md:text-2xl font-bold uppercase logo-gradient-text w-fit">
-            EXPLORE OUR CAPABILITIES
-          </p>
-        </div>
-      </div>
+    <section id="capabilities" className="pt-2 pb-6 lg:pt-4 lg:pb-10 bg-navy">
+      <div className="space-y-0">
+        {capabilities.map((capability, index) => {
+          const isEven = index % 2 === 0;
 
-      <div className="mx-auto w-full max-w-[94%] px-4 lg:px-8 relative group/nav">
-        {/* Navigation Buttons - Left */}
-        {/* Navigation Buttons - Left Removed */}
+          return (
+            <div
+              key={capability.id}
+              className={isEven ? "bg-navy" : "bg-[#152238]"}
+            >
+              <div className="mx-auto w-full max-w-[94%] px-4 lg:px-8 py-6 lg:py-8">
+                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center ${isEven ? '' : 'lg:flex-row-reverse'
+                  }`}>
+                  {/* Image */}
+                  <div className={`${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
+                    <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 aspect-[16/9]">
+                      <img
+                        src={capability.image}
+                        alt={capability.name}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
 
-        <div
-          ref={scrollContainerRef}
-          className="overflow-x-auto pb-0 scrollbar-hide snap-x snap-mandatory"
-        >
-          <div className="flex gap-4 lg:gap-6 w-max xl:w-full">
-            {capabilities.map((product) => (
-              <Link
-                key={product.id}
-                to={`/capability/${product.id}`}
-                className="group relative h-[300px] w-[85vw] sm:w-[45vw] md:w-[40vw] lg:w-[30vw] xl:w-auto xl:flex-1 min-w-[260px] xl:min-w-0 flex-shrink-0 xl:shrink overflow-hidden rounded-[2rem] cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 snap-center isolation-isolate transform-gpu"
-                style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}
-              >
-                {/* Background Image Container with redundant rounding and GPU acceleration */}
-                <div className="absolute inset-0 rounded-[2rem] overflow-hidden translate-z-0">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110 transform-gpu"
-                    loading="lazy"
-                  />
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-black/40" />
-                </div>
+                  {/* Content */}
+                  <div className={`${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
+                    <h3 className="text-2xl md:text-3xl font-bold logo-gradient-text w-fit mb-4">
+                      {capability.name}
+                    </h3>
+                    <p className="text-base text-white/70 leading-relaxed mb-6">
+                      {capability.description}
+                    </p>
 
-                {/* Content */}
-                <div className="absolute bottom-0 left-0 p-6 w-full text-left">
-                  <h3 className="text-2xl font-bold text-white mb-1 transition-colors">
-                    {product.name}
-                  </h3>
-                  <div className="overflow-hidden max-h-12 opacity-100 lg:max-h-0 lg:opacity-0 lg:group-hover:max-h-12 lg:group-hover:opacity-100 transition-all duration-500 ease-in-out">
-                    <span
-                      className="inline-block mt-2 px-6 py-2 logo-gradient-bg text-[#1a2942] text-sm font-medium rounded-full shadow-lg transform translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0 transition-transform duration-500 delay-100"
+                    {/* Features list */}
+                    <ul className="space-y-2 mb-6">
+                      {capability.features.slice(0, 4).map((feature, idx) => (
+                        <li key={idx} className="flex items-start gap-3 text-white/60">
+                          <span className="w-1.5 h-1.5 rounded-full bg-gold mt-2.5 shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <Link
+                      to={`/capability/${capability.id}`}
+                      className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-semibold logo-gradient-bg text-[#1a2942] transition-all hover:opacity-90 shadow-lg text-sm"
                     >
-                      Read More
-                    </span>
+                      Learn More
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
                   </div>
                 </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-
-        {/* Navigation Buttons - Right */}
-        {/* Navigation Buttons - Right Removed */}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

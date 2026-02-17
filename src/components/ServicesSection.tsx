@@ -1,19 +1,26 @@
 import { Link } from "react-router-dom";
 import { services } from "@/data/services";
+import { capabilities } from "@/data/capabilities";
 import { ArrowRight } from "lucide-react";
+
+// Combine capabilities and services into one array
+const allServices = [...capabilities, ...services];
 
 export default function ServicesSection() {
     return (
         <section id="services" className="pt-2 pb-6 lg:pt-4 lg:pb-10 bg-navy">
-            <div className="mx-auto w-full max-w-[94%] px-4 lg:px-8 mb-4">
-                <p className="text-xl md:text-2xl font-bold uppercase logo-gradient-text w-fit">
+            <div className="mx-auto w-full max-w-[94%] px-4 lg:px-8 mb-4 pt-6">
+                <p className="text-3xl md:text-4xl font-extrabold uppercase logo-gradient-text w-fit">
                     OUR SERVICES
                 </p>
             </div>
 
             <div className="space-y-0">
-                {services.map((service, index) => {
+                {allServices.map((service, index) => {
                     const isEven = index % 2 === 0;
+                    // Determine if this is a capability or service for routing
+                    const isCapability = capabilities.some(cap => cap.id === service.id);
+                    const detailUrl = isCapability ? `/capability/${service.id}` : `/service/${service.id}`;
 
                     return (
                         <div
@@ -55,8 +62,8 @@ export default function ServicesSection() {
                                         </ul>
 
                                         <Link
-                                            to={`/service/${service.id}`}
-                                            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-semibold logo-gradient-bg text-[#1a2942] transition-all hover:opacity-90 shadow-lg text-sm"
+                                            to={detailUrl}
+                                            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-2xl font-semibold logo-gradient-bg text-[#1a2942] transition-all hover:opacity-90 shadow-lg text-sm"
                                         >
                                             Learn More
                                             <ArrowRight className="h-4 w-4" />

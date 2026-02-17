@@ -6,7 +6,7 @@ import TrackShipmentModal from "@/components/TrackShipmentModal";
 import QuoteModal from "@/components/QuoteModal";
 import SignInModal from "@/components/SignInModal";
 import RegisterModal from "@/components/RegisterModal";
-import CapabilitiesSection from "@/components/CapabilitiesSection";
+
 import HelpCenter from "@/components/HelpCenter";
 import Footer from "@/components/Footer";
 
@@ -78,9 +78,9 @@ const Index = () => {
 
 
 
-      <CapabilitiesSection />
-      <DestinationsSection />
+
       <ServicesSection />
+      <DestinationsSection />
       <HelpCenter />
       <Footer />
 
