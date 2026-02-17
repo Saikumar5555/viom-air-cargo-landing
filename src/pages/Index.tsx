@@ -14,7 +14,7 @@ import { toast } from "sonner";
 
 
 import ServicesSection from "@/components/ServicesSection";
-import DestinationsSection from "@/components/DestinationsSection";
+import WhatsNewSection from "@/components/WhatsNewSection";
 
 const Index = () => {
   const [bookingOpen, setBookingOpen] = useState(false);
@@ -80,7 +80,7 @@ const Index = () => {
 
 
       <ServicesSection />
-      <DestinationsSection />
+      <WhatsNewSection />
       <HelpCenter />
       <Footer />
 

@@ -31,7 +31,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-sm text-white/60 leading-relaxed max-w-xs">
-              Delivering ultra-secure, white-glove air cargo solutions across global destinations.
+              Delivering ultra-secure, white-glove air cargo solutions globally.
             </p>
           </div>
 

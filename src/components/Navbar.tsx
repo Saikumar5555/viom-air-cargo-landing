@@ -116,11 +116,11 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
           </button>
 
           <a
-            href="/#destinations"
-            onClick={(e) => handleLinkClick(e, "#destinations")}
+            href="/#whats-new"
+            onClick={(e) => handleLinkClick(e, "#whats-new")}
             className="px-4 py-2 text-sm font-medium rounded-lg transition-colors text-white hover:text-gold hover:bg-white/5"
           >
-            Destinations
+            What’s New
           </a>
 
           {/* <a
@@ -250,14 +250,14 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
               </div>
 
               <a
-                href="/#destinations"
+                href="/#whats-new"
                 onClick={(e) => {
-                  handleLinkClick(e, "#destinations");
+                  handleLinkClick(e, "#whats-new");
                   setMobileOpen(false);
                 }}
                 className="block px-4 py-3 text-base font-medium text-white rounded-lg hover:bg-white/5 transition-colors"
               >
-                Destinations
+                What’s New
               </a>
             </div>
 

@@ -63,7 +63,7 @@ const destinations = [
     },
 ];
 
-export default function DestinationsSection() {
+export default function WhatsNewSection() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isTransitioning, setIsTransitioning] = useState(false);
     const navigate = useNavigate();
@@ -92,12 +92,12 @@ export default function DestinationsSection() {
     const currentDest = destinations[currentIndex];
 
     return (
-        <section id="destinations" className="pt-6 pb-10 lg:pt-8 lg:pb-14 bg-[#152238] overflow-hidden relative">
+        <section id="whats-new" className="pt-6 pb-10 lg:pt-8 lg:pb-14 bg-[#152238] overflow-hidden relative">
             <div className="mx-auto w-full max-w-[94%] px-4 lg:px-8">
                 {/* Section Heading */}
                 <div className="mb-8">
                     <p className="text-3xl md:text-4xl font-extrabold uppercase logo-gradient-text w-fit">
-                        DESTINATIONS
+                        WHAT’S NEW
                     </p>
                 </div>
 
