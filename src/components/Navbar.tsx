@@ -23,10 +23,10 @@ interface NavbarProps {
 }
 
 const products = [
-  { name: "Charter", href: "#products" },
-  { name: "Pharmaceutical", href: "#products" },
-  { name: "Air Freight", href: "#products" },
-  { name: "Fresh", href: "#products" },
+  { name: "Charter", href: "/capability/charter" },
+  { name: "Pharmaceutical", href: "/capability/pharmaceutical" },
+  { name: "Air Freight", href: "/capability/airfreight" },
+  { name: "Fresh", href: "/capability/fresh" },
 ];
 
 export default function Navbar({ onSignInClick }: NavbarProps) {
@@ -35,6 +35,7 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
   const [capabilitiesDrawerOpen, setCapabilitiesDrawerOpen] = useState(false);
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [trackModalOpen, setTrackModalOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -105,20 +106,13 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
           >
             About Us
           </a>
-          <a
-            href="#services"
-            onClick={(e) => handleLinkClick(e, "#services")}
-            className="px-4 py-2 text-sm font-medium rounded-lg transition-colors text-white hover:text-gold hover:bg-white/5"
-          >
-            Services
-          </a>
 
-          {/* Products trigger */}
+          {/* Services trigger (formerly Capabilities) */}
           <button
             onClick={() => setCapabilitiesDrawerOpen(true)}
             className="flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-colors text-white hover:text-gold hover:bg-white/5"
           >
-            Capabilities <ChevronDown className="h-4 w-4" />
+            Services <ChevronDown className="h-4 w-4" />
           </button>
 
           {/* <a
@@ -203,7 +197,7 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
         <div className="flex flex-col h-full overflow-y-auto px-6 pb-20">
           <div className="space-y-6">
 
-            {/* About Us & Services First */}
+            {/* About Us & Services with Nested Capabilities */}
             <div className="space-y-2">
               <a
                 href="/about"
@@ -215,37 +209,36 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
               >
                 About Us
               </a>
-              <a
-                href="#services"
-                onClick={(e) => {
-                  handleLinkClick(e, "#services");
-                  setMobileOpen(false);
-                }}
-                className="block px-4 py-3 text-base font-medium text-white rounded-lg hover:bg-white/5 transition-colors"
-              >
-                Services
-              </a>
-            </div>
 
-            {/* Then Products */}
-            <div className="border-t border-white/10 pt-6">
-              <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">
-                Capabilities
-              </p>
-              <div className="grid grid-cols-2 gap-2">
-                {products.map((p) => (
-                  <a
-                    key={p.name}
-                    href={p.href}
-                    onClick={(e) => {
-                      handleLinkClick(e, p.href);
-                      setMobileOpen(false);
-                    }}
-                    className="flex items-center px-4 py-3 text-sm font-medium text-white bg-white/5 rounded-lg hover:bg-white/10 active:scale-95 transition-all"
-                  >
-                    {p.name}
-                  </a>
-                ))}
+              {/* Services Accordion */}
+              <div>
+                <button
+                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                  className="flex items-center justify-between w-full px-4 py-3 text-base font-medium text-white rounded-lg hover:bg-white/5 transition-colors"
+                >
+                  Services
+                  <ChevronDown className={`h-4 w-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
+                </button>
+
+                {/* Nested Products */}
+                <div
+                  className={`space-y-1 pl-4 overflow-hidden transition-all duration-300 ease-in-out ${mobileServicesOpen ? "max-h-[500px] opacity-100 mt-2" : "max-h-0 opacity-0"
+                    }`}
+                >
+                  {products.map((p) => (
+                    <a
+                      key={p.name}
+                      href={p.href}
+                      onClick={(e) => {
+                        handleLinkClick(e, p.href);
+                        setMobileOpen(false);
+                      }}
+                      className="block px-4 py-2 text-sm font-medium text-white/70 hover:text-white rounded-lg hover:bg-white/5 transition-colors"
+                    >
+                      {p.name}
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
 

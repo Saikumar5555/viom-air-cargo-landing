@@ -79,8 +79,8 @@ const Index = () => {
 
 
       <CapabilitiesSection />
-      <ServicesSection />
       <DestinationsSection />
+      <ServicesSection />
       <HelpCenter />
       <Footer />
 

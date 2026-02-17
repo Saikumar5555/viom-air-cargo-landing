@@ -92,7 +92,7 @@ export default function DestinationsSection() {
     const currentDest = destinations[currentIndex];
 
     return (
-        <section className="pt-6 pb-10 lg:pt-8 lg:pb-14 bg-white overflow-hidden relative border-t border-gray-100">
+        <section className="pt-6 pb-10 lg:pt-8 lg:pb-14 bg-[#152238] overflow-hidden relative">
             <div className="mx-auto w-full max-w-[94%] px-4 lg:px-8">
                 {/* Rounded Slider Card - Rounded removed for sharp edges */}
                 <div className="relative h-[400px] md:h-[500px] lg:h-[550px] rounded-none overflow-hidden shadow-2xl bg-black group-nav">
